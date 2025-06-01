@@ -1,0 +1,322 @@
+@{
+    ViewData["Title"] = "Admin - Task Assigner";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* Your existing styles here */
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
+    padding: 0;
+    color: #343a40;
+}
+
+
+
+form#taskForm {
+    width: 650px;
+    background-color: #fff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    transition: box-shadow 0.3s ease;
+    margin: auto;
+}
+
+form#taskForm:hover {
+    box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+}
+
+h2 {
+    text-align: center;
+    color: #212529;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #495057;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1.8px solid #ced4da;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    color: #495057;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13,110,253,0.3);
+    outline: none;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button[type="submit"] {
+    width: max-content;
+    padding: 12px 36px;
+    background-color: #0d6efd;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+    box-shadow: 0 6px 12px rgba(13,110,253,0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #084cd6;
+    box-shadow: 0 8px 20px rgba(8,76,214,0.7);
+}
+
+
+
+ a {
+    text-decoration: none;
+    background-color: #1bccd5;
+    color: #fff;
+    padding: 10px 22px; /* Uncommented */
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 50px;
+    display: inline-block; /* Uncommented */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 10px rgba(85, 206, 150, 0.5);
+    user-select: none;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 90vh;
+    padding: 40px 20px;
+    /* Optional background if needed */
+    /* background: linear-gradient(135deg, #6c757d 0%, #343a40 100%); */
+}
+
+
+a:hover {
+    background-color: #146c43;
+    box-shadow: 0 6px 15px rgba(7, 241, 132, 0.7);
+}
+
+</style>
+
+<div class="center-container">
+    <div>
+       
+
+        <!-- Individual Form -->
+        <div id="employeeForm">
+            
+            <form id="taskForm" method="post" action="/Admin/AssignTask">
+            
+                <h2>Assign Task to Employee</h2>
+                
+                    <a asp-controller="Dashboard" asp-action="AdminDashboard">Go to Admin Dashboard</a>
+                
+               
+                <div>
+                    <label for="email">Employee Email:</label>
+                    <input type="email" id="email" name="Email" required />
+                </div>
+
+                <div>
+                    <label for="employeeId">Employee ID:</label>
+                    <input type="text" id="employeeId" name="EmployeeId" readonly />
+                </div>
+
+                <div>
+                    <label for="employeeName">Employee Name:</label>
+                    <input type="text" id="employeeName" name="EmployeeName" readonly />
+                </div>
+
+                <div>
+                    <label for="taskTitle">Task Title:</label>
+                    <input type="text" id="taskTitle" name="TaskTitle" required />
+                </div>
+
+                <div>
+                    <label for="technology">Technology:</label>
+                    <input type="text" id="technology" name="Technology" required />
+                </div>
+
+                <div>
+                    <label for="DueDate">Due Date:</label>
+                    <input type="date" id="DueDate" name="DueDate" required />
+                </div>
+
+                <div>
+                    <label for="task">Task Description:</label>
+                    <textarea id="task" name="TaskDescription" rows="5" required></textarea>
+                </div>
+
+                <div>
+                    <label for="assignedBy">Assigned By:</label>
+                    <input type="text" id="assignedBy" name="AssignedBy" value="@ViewBag.AdminName" readonly />
+                </div>
+
+                <div>
+                    <button type="submit">Assign Task</button>
+                </div>
+                 
+
+               
+            </form>
+             
+        </div>    
+
+
+
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function toggleForm() {
+            const type = document.getElementById("assignmentType").value;
+            document.getElementById("employeeForm").style.display = type === "employee" ? "block" : "none";
+            document.getElementById("teamForm").style.display = type === "team" ? "block" : "none";
+        }
+
+        function addEmailInput() {
+            const container = document.getElementById("emailInputs");
+            const div = document.createElement("div");
+            div.className = "email-input";
+            div.innerHTML = `
+                <input type="email" name="TeamEmails" placeholder="Enter team member email" required class="team-email" />
+                
+               <input type="email" name="TeamEmails" placeholder="Enter team member email" required class="team-email" />
+                <button type="button" class="remove-email" onclick="removeEmailInput(this)">Remove</button>
+            `;
+            container.appendChild(div);
+
+            // Attach blur event to the new email input for auto fetch of name and ID
+            div.querySelector(".team-email").addEventListener("blur", async function () {
+                await fetchTeamMemberData(this);
+            });
+        }
+
+        function removeEmailInput(button) {
+            const container = document.getElementById("emailInputs");
+            if (container.children.length > 1) {
+                container.removeChild(button.parentElement);
+            }
+        }
+
+        // Fetch single employee data by email for employee assignment form
+        document.getElementById("email").addEventListener("blur", async function () {
+            const email = this.value.trim();
+            if (email) {
+                try {
+                    const response = await fetch(`/Admin/GetEmployeeByEmail?email=${encodeURIComponent(email)}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.id && data.name) {
+                            document.getElementById("employeeId").value = data.id;
+                            document.getElementById("employeeName").value = data.name;
+                        } else {
+                            document.getElementById("employeeId").value = "";
+                            document.getElementById("employeeName").value = "";
+                            alert("Employee not found with this email");
+                        }
+                    } else {
+                        console.error("Failed to fetch employee data");
+                        document.getElementById("employeeId").value = "";
+                        document.getElementById("employeeName").value = "";
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    document.getElementById("employeeId").value = "";
+                    document.getElementById("employeeName").value = "";
+                }
+            } else {
+                document.getElementById("employeeId").value = "";
+                document.getElementById("employeeName").value = "";
+            }
+        });
+
+        // Fetch employee data for team member email inputs
+        async function fetchTeamMemberData(emailInput) {
+            const email = emailInput.value.trim();
+            const parentDiv = emailInput.parentElement;
+            const idInput = parentDiv.querySelector(".team-id");
+            const nameInput = parentDiv.querySelector(".team-name");
+
+            if (email) {
+                try {
+                    const response = await fetch(`/Admin/GetEmployeeByEmail?email=${encodeURIComponent(email)}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.id && data.name) {
+                            idInput.value = data.id;
+                            nameInput.value = data.name;
+                        } else {
+                            idInput.value = "";
+                            nameInput.value = "";
+                            alert(`Employee not found for email: ${email}`);
+                        }
+                    } else {
+                        console.error("Failed to fetch team member data");
+                        idInput.value = "";
+                        nameInput.value = "";
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                    idInput.value = "";
+                    nameInput.value = "";
+                }
+            } else {
+                idInput.value = "";
+                nameInput.value = "";
+            }
+        }
+
+        // Attach blur event to all existing team email inputs on page load
+        window.onload = function () {
+            document.querySelectorAll(".team-email").forEach(input => {
+                input.addEventListener("blur", async function () {
+                    await fetchTeamMemberData(this);
+                });
+            });
+        }
+    </script>
+}

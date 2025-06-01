@@ -1,0 +1,47 @@
+@model List<RoleBasedJWTMVC.Models.LeaveRequest>
+
+<h2>Admin Leave Dashboard</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Reason</th>
+            <th>Status</th>
+            <th>Request Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.Id</td>
+                <td>@leave.EmployeeName</td>
+                <td>@leave.EmployeeEmail</td>
+                <td>@leave.Reason</td>
+                <td>@leave.Status</td>
+                <td>@leave.RequestDate.ToShortDateString()</td>
+                <td>
+                    @if (leave.Status == "Pending")
+                    {
+                        <form asp-action="Approve" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@leave.Id" />
+                            <button type="submit">Approve</button>
+                        </form>
+                        <form asp-action="Reject" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@leave.Id" />
+                            <button type="submit">Reject</button>
+                        </form>
+                    }
+                    else
+                    {
+                        @leave.Status
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

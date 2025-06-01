@@ -1,0 +1,25 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+
+    string isActive(string ctrl, string act) =>
+        currentController == ctrl && currentAction == act ? "active-link" : "";
+}
+
+@* <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+        <li class="@isActive("Admin", "AdminDashboard")">
+            <a href="/Admin/AdminDashboard">Dashboard</a>
+        </li>
+        <li class="@isActive("Admin", "TaskAssigner")">
+            <a href="/Admin/TaskAssigner">Task Assigner</a>
+        </li>
+        <li class="@isActive("Admin", "Chatbot")">
+            <a href="/Admin/Chatbot">Chat</a>
+        </li>
+        <li>
+            <a href="/Logout">Logout</a>
+        </li>
+    </ul>
+</aside> *@

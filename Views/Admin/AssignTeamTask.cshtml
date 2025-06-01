@@ -1,0 +1,264 @@
+@{
+    ViewData["Title"] = "Admin - Task Assigner Team";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #teamForm {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 25px 30px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    #teamForm h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    #emailInputs label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #444;
+    }
+
+    .email-input {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+
+    .email-input input[type="email"],
+    .email-input input[type="text"] {
+        flex: 1 1 180px;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .email-input .remove-email {
+        background-color: #d9534f;
+        border: none;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        align-self: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .email-input .remove-email:hover {
+        background-color: #c9302c;
+    }
+
+    form > div:not(#emailInputs) {
+        margin-bottom: 18px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #333;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px 0;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .dashboard-link {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .dashboard-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .dashboard-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div id="teamForm">
+    @if (TempData["Success"] != null)
+    {
+        <div style="color: green; text-align:center; margin-bottom:10px;">
+            @TempData["Success"]
+        </div>
+    }
+
+    <form method="post" asp-controller="Admin" asp-action="AssignTeamTask" id="teamTaskForm">
+
+        <h2>Assign Task to Team</h2>
+
+        <div>
+            <label for="Id">Id:</label>
+            <input type="number" id="Id" name="Id" placeholder="enter team id" required onblur="fetchTeamMembers()" />
+        </div>
+
+        <div id="emailInputs">
+            <label>Member Email:</label>
+            <div class="email-input">
+                <input type="email" name="TeamEmails" required />
+            </div>
+        </div>
+
+        <div id="teamMembersContainer"></div>
+
+        <div>
+            <label for="memberName">MemberName:</label>
+            <input type="text" id="memberName" name="memberName" required />
+        </div>
+
+        <div>
+            <label for="taskTitle">Task Title:</label>
+            <input type="text" id="taskTitle" name="TaskTitle" required />
+        </div>
+
+        <div>
+            <label for="specialization">Specialization:</label>
+            <input type="text" id="specialization" name="specialization" required />
+        </div>
+
+        <div>
+            <label for="taskTypes">Task Type:</label>
+            <select id="taskTypes" name="TaskTypes" required>
+                <option value="">--Select Task Type--</option>
+                <option value="Bug Fix">Bug Fix</option>
+                <option value="Feature">Feature</option>
+                <option value="Documentation">Documentation</option>
+                <option value="Research">Research</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="technology">Technology:</label>
+            <input type="text" id="technology" name="Technology" placeholder="e.g. .NET, Angular" />
+        </div>
+
+        <div>
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="DueDate" required />
+        </div>
+
+        <div>
+            <label for="taskDesc">Task Description:</label>
+            <textarea id="taskDesc" name="TaskDescription" rows="5" required></textarea>
+        </div>
+
+        <div>
+            <button type="submit" onclick="fetchTeamMembers()">Send Task</button>
+        </div>
+
+        <div class="dashboard-link">
+            <a asp-controller="Dashboard" asp-action="AdminDashboard">Go to Admin Dashboard</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    function fetchTeamMembers() {
+        const teamId = document.getElementById('Id').value;
+        if (!teamId) {
+            document.getElementById('teamMembersContainer').innerHTML = '';
+            return;
+        }
+
+        fetch(`/Admin/GetTeamMembers?teamId=${teamId}`)
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
+            })
+            .then(data => {
+                const emailInputsDiv = document.getElementById('emailInputs');
+                const membersContainer = document.getElementById('teamMembersContainer');
+
+                emailInputsDiv.innerHTML = '<label>Member Email:</label>';
+                membersContainer.innerHTML = '';
+
+                if (data.length === 0) {
+                    membersContainer.innerHTML = '<p>No members found for this Team ID.</p>';
+                    return;
+                }
+
+                data.forEach((member, index) => {
+                    const emailDiv = document.createElement('div');
+                    emailDiv.classList.add('email-input');
+                    emailDiv.innerHTML = `
+                        <input type="email" name="TeamEmails" value="${member.memberEmail}" required />
+                    `;
+                    emailInputsDiv.appendChild(emailDiv);
+
+                    if (index === 0) {
+                        document.getElementById('memberName').value = member.memberName;
+                        document.getElementById('specialization').value = member.specialization;
+                    }
+
+                    const memberBlock = document.createElement('div');
+                    memberBlock.style.border = '1px solid #ccc';
+                    memberBlock.style.padding = '10px';
+                    memberBlock.style.marginBottom = '10px';
+                    memberBlock.style.borderRadius = '5px';
+                    memberBlock.innerHTML = `
+                        <p><strong>Name:</strong> ${member.memberName}</p>
+                        <p><strong>Email:</strong> ${member.memberEmail}</p>
+                        <p><strong>Specialization:</strong> ${member.specialization}</p>
+                    `;
+                    membersContainer.appendChild(memberBlock);
+                });
+            })
+            .catch(err => {
+                console.error('Error fetching team members:', err);
+                alert("Could not load team members. Check the console for more.");
+            });
+    }
+</script>

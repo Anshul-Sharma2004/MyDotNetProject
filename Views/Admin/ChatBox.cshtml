@@ -1,0 +1,183 @@
+@model RoleBasedJWTMVC.Models.Employee
+
+<h2>ChatBox for @Model.Name</h2>
+<p>Email: @Model.Email</p>
+
+<h2>Real-Time Chat</h2>
+
+<div id="chat-box" class="chat-container"></div>
+
+<div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+<script>
+    const receiverEmail = '@Model.Email';
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chathub", {
+            accessTokenFactory: () => localStorage.getItem("jwt") // Optional if you're using JWT auth
+        })
+        .build();
+
+    connection.on("ReceiveMessage", function (from, message) {
+        const isSender = from === '@User.Identity.Name'; // Or compare using full email if needed
+        const chatBox = document.getElementById("chat-box");
+
+        // Create message element with transition support
+        const messageHtml = `
+            <div class="message ${isSender ? 'sent' : 'received'}">
+                <span class="bubble"><b>${isSender ? 'You' : from}:</b> ${message}</span>
+            </div>`;
+
+        const temp = document.createElement("div");
+        temp.innerHTML = messageHtml;
+        const msgEl = temp.firstElementChild;
+        chatBox.appendChild(msgEl);
+
+        // Trigger transition by adding 'show' class after appending
+        requestAnimationFrame(() => msgEl.classList.add("show"));
+
+        // Scroll to bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    connection.start().then(() => {
+        console.log("SignalR Connected.");
+    }).catch(err => {
+        console.error("Connection error:", err.toString());
+    });
+
+    function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        connection.invoke("SendMessage", receiverEmail, message)
+            .then(() => {
+                messageInput.value = "";
+            })
+            .catch(err => {
+                console.error("Send error:", err.toString());
+            });
+    }
+</script>
+
+
+<a href="/Views/Dashboard/AdminDashboard">Go to AdminDashboard</a>
+
+<!-- WhatsApp-like Chat CSS -->
+<style>
+.chat-container {
+    width: 420px;
+    height: 360px;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f0f0f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 15px;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Input area */
+.chat-input {
+    display: flex;
+    gap: 10px;
+    width: 420px;
+    padding-top: 8px;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s;
+    background-color: #fff;
+}
+
+.chat-input input[type="text"]:focus {
+    border-color: #25D366;
+    outline: none;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #25D366;
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #1cb255;
+}
+
+/* Message container */
+.message {
+    display: flex;
+    margin: 6px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message.sent {
+    justify-content: flex-end;
+}
+
+.message.received {
+    justify-content: flex-start;
+}
+
+/* Chat bubble */
+.bubble {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14.2px;
+    line-height: 1.4;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.message.sent .bubble {
+    background-color: #25D366;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.message.received .bubble {
+    background-color: #ffffff;
+    color: #222;
+    border-bottom-left-radius: 5px;
+}
+</style>
+
+
+

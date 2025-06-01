@@ -1,0 +1,104 @@
+@model IEnumerable<RoleBasedJWTMVC.Models.EmployeeTask>
+    <style>
+        .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.task-table th,
+.task-table td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.task-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.task-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.task-table tr:hover {
+    background-color: #e9ecef;
+}
+
+    .dashboard-link {
+        margin-top: 20px;
+    }
+
+    .dashboard-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .dashboard-link a:hover {
+        text-decoration: underline;
+    }
+
+    </style>
+
+@{
+    ViewData["Title"] = "Assigned Tasks";
+    Layout = "/Views/Shared/_Layout.cshtml";
+    int serialNo = 1;
+}
+
+
+<!-- Link to your custom CSS (place this file in wwwroot/css/AssignedTasks.css) -->
+
+
+<h2>Assigned Tasks</h2>
+ <div class="dashboard-link">
+            <a asp-controller="Dashboard" asp-action="EmployeeDashboard">Go to Employee Dashboard</a>
+</div>
+
+<table class="task-table">
+    <thead>
+        <tr>
+            <th>S.NO.</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Technology</th>
+            <th>Assigned Date</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Assigned By</th>
+            <th>Complete Task</th>
+            <th>Delete Task</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@serialNo</td>
+                <td>@task.TaskTitle</td>
+                <td>@task.TaskDescription</td>
+                <td>@task.Technology</td>
+                <td>@task.AssignedDate.ToShortDateString()</td>
+                <td>@(task.DueDate?.ToShortDateString() ?? "Not Set")</td>
+                <td>@task.Status</td>
+                <td>@(task.AssignedBy?.Name ?? "Unknown")</td>
+                <td>
+                    <form asp-action="CompleteTask" method="post">
+                        <input type="hidden" name="taskId" value="@task.TaskId" />
+                        <button type="submit" class="btn btn-success btn-sm">Complete</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="DeleteTask" asp-controller="DashboardData" method="post" style="display:inline;">
+                        <input type="hidden" name="taskId" value="@task.TaskId" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this task?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            serialNo++;
+        }
+    </tbody>
+</table>

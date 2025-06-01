@@ -1,0 +1,93 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    .register-form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .register-form input,
+    .register-form select {
+        width: 100%;
+        padding: 12px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .register-form button {
+        width: 100%;
+        padding: 12px 10px;
+        background-color: #28a745;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .register-form button:hover {
+        background-color: #218838;
+    }
+
+    .register-form a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+    }
+
+    .register-form a:hover {
+        color: #e4950b;
+    }
+
+    .link-container {
+        text-align: right;
+        margin-top: -10px;
+    }
+</style>
+
+<h2 class="text-center">Register</h2>
+
+<form method="post" asp-controller="Auth" asp-action="Register" class="register-form">
+    <input name="RegisterID" placeholder="RegID" required />
+    <input name="Name" placeholder="Name" required />
+    <input name="Email" placeholder="Email" type="email" required />
+    <input name="Password" placeholder="Password" type="password" required />
+    <select name="Role" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="Employee">Employee</option>
+    </select>
+     <select name="Department" required>
+    <option value="" disabled selected>Select Department</option>
+
+    <option value="Marketing">Marketing</option>
+    <option value="Sales">Sales</option>
+    <option value="IT">IT</option>
+
+    <optgroup label="Management">
+        
+        <option value="HR">HR</option>
+        <option value="ADMIN">ADMIN</option>
+
+    </optgroup>
+   </select>
+   <input name="PhoneNumber" placeholder="PhoneNumber" type="number" required />
+
+    <button type="submit">Register</button>
+
+    <div class="link-container">
+        <a href="/">back home</a>
+    </div>
+</form>

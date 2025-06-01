@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    .login-form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .login-form input {
+        width: 100%;
+        padding: 12px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    .login-form button {
+        width: 100%;
+        padding: 12px 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .login-form button:hover {
+        background-color: #0056b3;
+    }
+     .login-form a:hover {
+        color: #e4950b;
+    }
+
+    .link-container {
+        text-align: right;
+        margin-top: 10px;
+    }
+</style>
+
+<h2 class="text-center">Login</h2>
+
+<form method="post" asp-controller="Auth" asp-action="Login" class="login-form">
+    <input name="Email" placeholder="Email" type="email" required />
+    <input name="Password" placeholder="Password" type="password" required />
+    <button type="submit">Login</button>
+     <div class="link-container">
+        <a href="/">back home</a>
+    </div>
+</form>

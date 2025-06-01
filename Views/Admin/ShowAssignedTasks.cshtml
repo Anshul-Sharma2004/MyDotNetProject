@@ -1,0 +1,130 @@
+@model List<RoleBasedJWTMVC.Models.TaskAssignment>
+@{
+    ViewData["Title"] = "Assigned Tasks";
+}
+
+<h2>Tasks Assigned by You</h2>
+
+
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        @* padding: 20px; *@
+        background-color: #f8f9fa;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto; /* Enables horizontal scroll on small screens */
+        padding: 0 10px;
+    }
+
+    .task-table {
+        width: 100%;
+        max-width: 1200px;
+        min-width: 800px; /* Ensures proper column spacing on wide content */
+        margin: 0 auto;
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        table-layout: auto;
+    }
+
+    .task-table th, .task-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border: 1px solid #ddd;
+        height: 50px;
+        vertical-align: top;
+        word-wrap: break-word;
+    }
+
+    .task-table th {
+        background-color: #343a40;
+        color: white;
+        white-space: nowrap; /* Prevents header text from wrapping */
+    }
+
+    .task-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .task-table tr:hover {
+        background-color: #e9ecef;
+    }
+
+    .btn-danger.btn-sm {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+
+    .dashboard-link {
+        text-align: right;
+        margin: 20px;
+    }
+
+    .dashboard-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .dashboard-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="dashboard-link">
+      <a asp-controller="Dashboard" asp-action="AdminDashboard">Go to Admin Dashboard</a>
+    </div>
+    <table class="task-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Employee Email</th>
+                <th>Task Title</th>
+                <th>Technology</th>
+                <th>Assigned Date</th>
+                <th>Due Date</th>
+                <th>Task Description</th>
+                <th>Delete Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>@(i + 1)</td>
+                    <td>@Model[i].Email</td>
+                    <td>@Model[i].TaskTitle</td>
+                    <td>@Model[i].Technology</td>
+                    <td>@Model[i].AssignedDate.ToString("yyyy-MM-dd")</td>
+                    <td>@Model[i].DueDate.ToString("yyyy-MM-dd")</td>
+                    <td>@Model[i].TaskDescription</td>
+                    <td>
+                        <form asp-action="DeleteTask" asp-controller="Admin" method="post" onsubmit="return confirm('Are you sure you want to delete this task?');">
+                            <input type="hidden" name="id" value="@Model[i].Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No tasks found assigned by you.</p>
+}

@@ -1,0 +1,57 @@
+@model RoleBasedJWTMVC.Models.Team
+
+@{
+    ViewData["Title"] = "Add Team Member";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<h2>@ViewData["Title"]</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<div class="container mt-4">
+    <form asp-action="Add" asp-controller="Team" method="post" class="border p-4 rounded shadow-sm bg-light">
+        <div class="mb-3">
+            <label asp-for="TeamId" class="form-label"></label>
+            <input asp-for="TeamId" class="form-control" />
+            <span asp-validation-for="TeamId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MemberName" class="form-label"></label>
+            <input asp-for="MemberName" class="form-control" />
+            <span asp-validation-for="MemberName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="MemberEmail" class="form-label"></label>
+            <input asp-for="MemberEmail" type="email" class="form-control" />
+            <span asp-validation-for="MemberEmail" class="text-danger"></span>
+        </div>
+
+       <div class="mb-3">
+            <label asp-for="Specialization" class="form-label"></label>
+            <select asp-for="Specialization" class="form-control">
+                <option value="">-- Select Specialization --</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Database">Database</option>
+                <option value="DevOps">DevOps</option>
+            </select>
+            <span asp-validation-for="Specialization" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add Member</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

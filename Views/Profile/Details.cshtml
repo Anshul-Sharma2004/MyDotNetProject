@@ -1,0 +1,64 @@
+@model Profile
+@using System.Security.Claims
+@{
+    var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+}
+<style>
+ .admin-dashboard-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; 
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+    .admin-dashboard-link:hover {
+        background-color: #0056b3;
+        color: white;
+        text-decoration: none;
+    }
+
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-dark text-white text-center rounded-top-4">
+                    <h3 class="mb-0">Profile Details</h3>
+                </div>
+                <div class="card-body p-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Name:</strong> <span class="float-end">@Model.Name</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Email:</strong> <span class="float-end">@Model.Email</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Role:</strong> <span class="float-end">@Model.Role</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Department:</strong> <span class="float-end">@Model.Department</span>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Phone:</strong> <span class="float-end">@Model.PhoneNumber</span>
+                        </li>
+                    </ul>
+                        <div class="dashboard-link">
+                        @if (userRole == "Admin")
+                        {
+                            <a asp-controller="Dashboard" asp-action="AdminDashboard">Go to Admin Dashboard</a>
+                        }
+                        else if (userRole == "Employee")
+                        {
+                            <a asp-controller="Dashboard" asp-action="EmployeeDashboard">Go to Employee Dashboard</a>
+                        }
+                    </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

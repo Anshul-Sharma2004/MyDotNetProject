@@ -1,0 +1,166 @@
+@model RoleBasedJWTMVC.Models.ChatBoxViewModel
+
+<h2>ChatBox for @Model.ReceiverName</h2>
+<p>Email: @Model.ReceiverId</p>
+
+<h2>Real-Time Chat</h2>
+
+<div id="chat-box" class="chat-container">
+    @foreach (var message in Model.Messages)
+    {
+        var isSender = message.SenderId == Model.SenderId;
+
+        <div class="message @(isSender ? "sent" : "received")">
+            <span class="bubble"><b>@(isSender ? "You" : message.SenderId):</b> @message.Text</span>
+        </div>
+    }
+</div>
+
+<div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" />
+    <button id="sendBtn">Send</button>
+</div>
+
+<div class="dashboard-link">
+    <a asp-controller="Dashboard" asp-action="EmployeeDashboard">Go to Employee Dashboard</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const senderId = '@Model.SenderId';
+        const receiverId = '@Model.ReceiverId';
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chathub", {
+                accessTokenFactory: () => localStorage.getItem("jwt")
+            })
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        connection.on("ReceiveMessage", function (from, message) {
+            const chatBox = document.getElementById("chat-box");
+
+            if (from === receiverId || from === senderId) {
+                const isSender = from === senderId;
+                const messageHtml = `<div class="message ${isSender ? 'sent' : 'received'}">
+                                        <span class="bubble"><b>${isSender ? 'You' : from}:</b> ${message}</span>
+                                     </div>`;
+                chatBox.innerHTML += messageHtml;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        });
+
+        connection.start().then(() => {
+            console.log("SignalR Connected.");
+        }).catch(err => {
+            console.error("SignalR connection error:", err.toString());
+        });
+
+        document.getElementById("sendBtn").addEventListener("click", function () {
+            const messageInput = document.getElementById("messageInput");
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            connection.invoke("SendMessage", receiverId, message)
+                .then(() => {
+                    messageInput.value = "";
+                })
+                .catch(err => {
+                    console.error("Send error:", err.toString());
+                });
+        });
+    });
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .chat-container {
+        width: 350px;
+        height: 350px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        overflow-y: auto;
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .chat-input {
+        display: flex;
+        gap: 8px;
+        width: 350px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .chat-input input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    .chat-input button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #25D366;
+        color: white;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .message {
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .message.sent {
+        justify-content: flex-end;
+    }
+
+    .message.received {
+        justify-content: flex-start;
+    }
+
+    .bubble {
+        max-width: 70%;
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 14px;
+        line-height: 1.4;
+        background-color: #dcf8c6;
+        color: #000;
+    }
+
+    .message.sent .bubble {
+        background-color: #25D366;
+        color: white;
+        text-align: right;
+    }
+
+    .dashboard-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .dashboard-link a {
+        text-decoration: none;
+        background-color: #007bff;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    .dashboard-link a:hover {
+        background-color: #0056b3;
+    }
+</style>
