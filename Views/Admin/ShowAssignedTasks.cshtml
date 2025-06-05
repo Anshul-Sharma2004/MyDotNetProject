@@ -93,6 +93,7 @@
         <thead>
             <tr>
                 <th>#</th>
+                @* <th>Employee Name</th> *@
                 <th>Employee Email</th>
                 <th>Task Title</th>
                 <th>Technology</th>
@@ -107,6 +108,7 @@
             {
                 <tr>
                     <td>@(i + 1)</td>
+                    @* <td>@Model[i].Name</td> *@
                     <td>@Model[i].Email</td>
                     <td>@Model[i].TaskTitle</td>
                     <td>@Model[i].Technology</td>

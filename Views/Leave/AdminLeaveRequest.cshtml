@@ -1,0 +1,124 @@
+@model List<RoleBasedJWTMVC.Models.LeaveRequest>
+
+<h2>Leave Requests</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div>@TempData["SuccessMessage"]</div>
+}
+<style>
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+
+    thead {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    form {
+        display: inline;
+        margin: 0 2px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-reject {
+        background-color: #dc3545;
+    }
+
+    .btn-reject:hover {
+        background-color: #a71d2a;
+    }
+
+    .success-message {
+        text-align: center;
+        color: green;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+</style>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Email</th>
+            <th>Reason</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Requested On</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.EmployeeName</td>
+                <td>@leave.EmployeeEmail</td>
+                <td>@leave.Reason</td>
+                <td>@leave.StartDate.ToShortDateString()</td>
+                <td>@leave.EndDate.ToShortDateString()</td>
+                <td>@leave.Status.ToString()</td>
+                <td>@leave.RequestDate.ToShortDateString()</td>
+                <td>
+                    @if (leave.Status == RoleBasedJWTMVC.Models.LeaveStatus.Pending)
+                    {
+                        <form asp-action="ApproveLeave" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@leave.Id" />
+                            <button type="submit">Approve</button>
+                        </form>
+                        <form asp-action="RejectLeave" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@leave.Id" />
+                            <button type="submit">Reject</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span>No actions available</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

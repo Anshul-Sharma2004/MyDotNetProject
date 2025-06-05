@@ -5,6 +5,10 @@ a.navbar-brand[b-gpe4wt3ro2] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+   position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
 }
 
 a[b-gpe4wt3ro2] {
@@ -31,7 +35,7 @@ a[b-gpe4wt3ro2] {
 }
 
 .box-shadow[b-gpe4wt3ro2] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 .25rem .75rem rgba(159, 98, 98, 0.05);
 }
 
 button.accept-policy[b-gpe4wt3ro2] {

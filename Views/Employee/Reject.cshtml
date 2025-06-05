@@ -1,0 +1,29 @@
+@model List<RoleBasedJWTMVC.Models.LeaveRequest>
+
+<h2>Rejected Leave Requests</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Email</th>
+            <th>Reason</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmployeeName</td>
+            <td>@item.EmployeeEmail</td>
+            <td>@item.Reason</td>
+            <td>@item.StartDate.ToShortDateString()</td>
+            <td>@item.EndDate.ToShortDateString()</td>
+            <td>@item.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>

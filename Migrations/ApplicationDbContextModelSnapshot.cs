@@ -86,6 +86,9 @@ namespace RoleBasedJWTMVC.Migrations
                     b.Property<string>("SenderId")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("SenderName")
+                        .HasColumnType("longtext");
+
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("datetime(6)");
 
@@ -193,8 +196,8 @@ namespace RoleBasedJWTMVC.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("longtext");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

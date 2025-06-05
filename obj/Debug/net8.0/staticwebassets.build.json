@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uIFyPXx8C081KmkQuYwf8k7ESdHUUZfl2hpXt7qWM9E=",
+  "Hash": "DW5TUTMc/+cqDBMJUtFEiiNvywJpVVQisQLJ+gnqrSs=",
   "Source": "RoleBasedJWTMVC",
   "BasePath": "_content/RoleBasedJWTMVC",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "gy6k4cvdbg",
-      "Integrity": "OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=",
+      "Fingerprint": "25mdlgu0x3",
+      "Integrity": "Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\RoleBasedJWTMVC.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "gy6k4cvdbg",
-      "Integrity": "OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=",
+      "Fingerprint": "25mdlgu0x3",
+      "Integrity": "Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RoleBasedJWTMVC.bundle.scp.css"
@@ -99,6 +99,447 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3870277.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/3870277#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ahilr6u6bz",
+      "Integrity": "zoPzB66s8BhJPzL5H6DYw1NhGqlU9HounI1T4Pfmhvk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3870277.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3895889.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/3895889#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qwrqle4550",
+      "Integrity": "NkPVTTCWwp+Q9hycoSwz0r5NDg4QuwuwDCxqUTWSUFk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3895889.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\AdminDashboard.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/AdminDashboard#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bpaxnrmcwq",
+      "Integrity": "b9fiXF7sLqw0CtP6iP0JHT8ZWnKoN4AG+i39+8B6ogs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\AdminDashboard.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\administrator-male.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/administrator-male#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "syy2mjcd10",
+      "Integrity": "hB9/Bk4qOekJlK9uHskrzxAPVTuO1jiFXHzMZZ+7bII=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\administrator-male.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\assignteamtask.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/assignteamtask#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8ue29h0ufn",
+      "Integrity": "YDtc5mJEbYXjqKSoVDdznqY08brPU/SFKomeYnHrpco=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\assignteamtask.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\email.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/email#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jsgcpszpq7",
+      "Integrity": "A/lsDUV9OPoHexkOkhx2Tc0Y+10PlcHXbPoRHhf0xr4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\email.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employee.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/employee#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4y972sqheq",
+      "Integrity": "HEBytf70RJQE4c9qasLXEiHw9aWgxRAn4eK4O/NYETo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\employee.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employeedashboard.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/employeedashboard#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vw3zu7yxl8",
+      "Integrity": "j7iPbrvDt7odArHKCrAwb2IzDnNg3nIOdF+Fh7e/Wg0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\employeedashboard.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeeleave#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n5lrpf9sus",
+      "Integrity": "JXdXc3YynZLoLL9mxrC5wZxvQnZEf8XMqlnLN6yAPX4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeeleave.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave1.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeeleave1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ltz6pjzymc",
+      "Integrity": "J3D2LwCXi+CNN8MnSGGMLSxUvVNpDoMuMMtSrRixTOw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeeleave1.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\EmployeeleaveStatus.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/EmployeeleaveStatus#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lq6rhmc5nw",
+      "Integrity": "3SNkGstJVqUYE0I83bb0YebTj7RA3FBMW1bSN6hP43U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\EmployeeleaveStatus.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeemessage#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "85srti05s9",
+      "Integrity": "xDN+unakiX7UK23GYU+RUaV4yeluc8QVkXuoNzjdR1U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeemessage.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage1.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeemessage1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "90ntsjrwmf",
+      "Integrity": "uZG9xWIpR29qkIzyG2nlNizxMV3NxMEWFqvox8Vpwkc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeemessage1.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeetask#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uzn8m1gqej",
+      "Integrity": "eiWSsFwYSyV6U9r21dRWPMm8WYoTbyo9tI8aCopuvQ8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeetask.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask1.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/Employeetask1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yewzeza85z",
+      "Integrity": "2mgOEMWzr4U5En4sl0hAn4EPcNOoDTPFc0VRUBfK2BE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Employeetask1.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\HomeIndex.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/HomeIndex#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zh98kzg82y",
+      "Integrity": "F+LnsYAaLPN3D+EeYysmSOrbg1VlpGgahBuMK+ujFCw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\HomeIndex.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\login.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/login#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1x7er20fqu",
+      "Integrity": "lSJLRrnXfWU6pV8mN+QEWaXSbCcxPGrbs0kEBYi8Vms=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\login.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\loginbg.jpg",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/loginbg#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1vnvmynecg",
+      "Integrity": "c+cNKIUTIneyIi075FWr7dvbXdqKqbj1qZ9pnGbTRdk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\loginbg.jpg"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\register.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/register#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5pklukmi4g",
+      "Integrity": "9xXby+OS9q6+MPE9ZZfNDw3cuz3lHGsbbkgwWH5iJEE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\register.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\taskscheduling.gif",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/taskscheduling#[.{fingerprint}]?.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t2fnqejby9",
+      "Integrity": "6xHPJs3kyYW4OuopGhxV0r3NESCu8UeD3rjtEQQjho0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\taskscheduling.gif"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\teams.png",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "images/teams#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jt2p4z7vb7",
+      "Integrity": "h/qGPNIsgIYB34nTpHO5oV5wkasXlOu2UQ+TZ+XTOwI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\teams.png"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\js\\site.js",
@@ -1380,6 +1821,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\sounds\\notification-alert.mp3",
+      "SourceId": "RoleBasedJWTMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\",
+      "BasePath": "_content/RoleBasedJWTMVC",
+      "RelativePath": "sounds/notification-alert#[.{fingerprint}]?.mp3",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h0f5shd9te",
+      "Integrity": "QWvvNEJ+UdYJVf7wSFm6c8b+54uizmfULmt/dSrta+s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sounds\\notification-alert.mp3"
     }
   ],
   "Endpoints": [
@@ -1544,6 +2006,1728 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/3870277.ahilr6u6bz.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3870277.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149583"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zoPzB66s8BhJPzL5H6DYw1NhGqlU9HounI1T4Pfmhvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:21:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ahilr6u6bz"
+        },
+        {
+          "Name": "label",
+          "Value": "images/3870277.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zoPzB66s8BhJPzL5H6DYw1NhGqlU9HounI1T4Pfmhvk="
+        }
+      ]
+    },
+    {
+      "Route": "images/3870277.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3870277.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149583"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zoPzB66s8BhJPzL5H6DYw1NhGqlU9HounI1T4Pfmhvk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:21:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zoPzB66s8BhJPzL5H6DYw1NhGqlU9HounI1T4Pfmhvk="
+        }
+      ]
+    },
+    {
+      "Route": "images/3895889.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3895889.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "196082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NkPVTTCWwp+Q9hycoSwz0r5NDg4QuwuwDCxqUTWSUFk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:09:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NkPVTTCWwp+Q9hycoSwz0r5NDg4QuwuwDCxqUTWSUFk="
+        }
+      ]
+    },
+    {
+      "Route": "images/3895889.qwrqle4550.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3895889.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "196082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NkPVTTCWwp+Q9hycoSwz0r5NDg4QuwuwDCxqUTWSUFk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:09:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qwrqle4550"
+        },
+        {
+          "Name": "label",
+          "Value": "images/3895889.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NkPVTTCWwp+Q9hycoSwz0r5NDg4QuwuwDCxqUTWSUFk="
+        }
+      ]
+    },
+    {
+      "Route": "images/AdminDashboard.bpaxnrmcwq.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\AdminDashboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "358351"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b9fiXF7sLqw0CtP6iP0JHT8ZWnKoN4AG+i39+8B6ogs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:35:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bpaxnrmcwq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/AdminDashboard.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-b9fiXF7sLqw0CtP6iP0JHT8ZWnKoN4AG+i39+8B6ogs="
+        }
+      ]
+    },
+    {
+      "Route": "images/AdminDashboard.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\AdminDashboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "358351"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"b9fiXF7sLqw0CtP6iP0JHT8ZWnKoN4AG+i39+8B6ogs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:35:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-b9fiXF7sLqw0CtP6iP0JHT8ZWnKoN4AG+i39+8B6ogs="
+        }
+      ]
+    },
+    {
+      "Route": "images/administrator-male.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\administrator-male.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hB9/Bk4qOekJlK9uHskrzxAPVTuO1jiFXHzMZZ+7bII=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:31:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hB9/Bk4qOekJlK9uHskrzxAPVTuO1jiFXHzMZZ+7bII="
+        }
+      ]
+    },
+    {
+      "Route": "images/administrator-male.syy2mjcd10.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\administrator-male.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hB9/Bk4qOekJlK9uHskrzxAPVTuO1jiFXHzMZZ+7bII=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:31:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "syy2mjcd10"
+        },
+        {
+          "Name": "label",
+          "Value": "images/administrator-male.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hB9/Bk4qOekJlK9uHskrzxAPVTuO1jiFXHzMZZ+7bII="
+        }
+      ]
+    },
+    {
+      "Route": "images/assignteamtask.8ue29h0ufn.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\assignteamtask.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YDtc5mJEbYXjqKSoVDdznqY08brPU/SFKomeYnHrpco=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:32:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8ue29h0ufn"
+        },
+        {
+          "Name": "label",
+          "Value": "images/assignteamtask.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YDtc5mJEbYXjqKSoVDdznqY08brPU/SFKomeYnHrpco="
+        }
+      ]
+    },
+    {
+      "Route": "images/assignteamtask.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\assignteamtask.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YDtc5mJEbYXjqKSoVDdznqY08brPU/SFKomeYnHrpco=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:32:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YDtc5mJEbYXjqKSoVDdznqY08brPU/SFKomeYnHrpco="
+        }
+      ]
+    },
+    {
+      "Route": "images/email.jsgcpszpq7.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\email.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106307"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/lsDUV9OPoHexkOkhx2Tc0Y+10PlcHXbPoRHhf0xr4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Jun 2025 10:19:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jsgcpszpq7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/email.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A/lsDUV9OPoHexkOkhx2Tc0Y+10PlcHXbPoRHhf0xr4="
+        }
+      ]
+    },
+    {
+      "Route": "images/email.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\email.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "106307"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A/lsDUV9OPoHexkOkhx2Tc0Y+10PlcHXbPoRHhf0xr4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Jun 2025 10:19:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A/lsDUV9OPoHexkOkhx2Tc0Y+10PlcHXbPoRHhf0xr4="
+        }
+      ]
+    },
+    {
+      "Route": "images/employee.4y972sqheq.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employee.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "688"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HEBytf70RJQE4c9qasLXEiHw9aWgxRAn4eK4O/NYETo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:33:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4y972sqheq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/employee.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HEBytf70RJQE4c9qasLXEiHw9aWgxRAn4eK4O/NYETo="
+        }
+      ]
+    },
+    {
+      "Route": "images/employee.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employee.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "688"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HEBytf70RJQE4c9qasLXEiHw9aWgxRAn4eK4O/NYETo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:33:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HEBytf70RJQE4c9qasLXEiHw9aWgxRAn4eK4O/NYETo="
+        }
+      ]
+    },
+    {
+      "Route": "images/employeedashboard.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employeedashboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j7iPbrvDt7odArHKCrAwb2IzDnNg3nIOdF+Fh7e/Wg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 13:34:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j7iPbrvDt7odArHKCrAwb2IzDnNg3nIOdF+Fh7e/Wg0="
+        }
+      ]
+    },
+    {
+      "Route": "images/employeedashboard.vw3zu7yxl8.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employeedashboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "593744"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j7iPbrvDt7odArHKCrAwb2IzDnNg3nIOdF+Fh7e/Wg0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 13:34:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vw3zu7yxl8"
+        },
+        {
+          "Name": "label",
+          "Value": "images/employeedashboard.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j7iPbrvDt7odArHKCrAwb2IzDnNg3nIOdF+Fh7e/Wg0="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeeleave.n5lrpf9sus.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JXdXc3YynZLoLL9mxrC5wZxvQnZEf8XMqlnLN6yAPX4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:48:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n5lrpf9sus"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeeleave.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JXdXc3YynZLoLL9mxrC5wZxvQnZEf8XMqlnLN6yAPX4="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeeleave.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "164"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JXdXc3YynZLoLL9mxrC5wZxvQnZEf8XMqlnLN6yAPX4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:48:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JXdXc3YynZLoLL9mxrC5wZxvQnZEf8XMqlnLN6yAPX4="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeeleave1.ltz6pjzymc.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1758"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J3D2LwCXi+CNN8MnSGGMLSxUvVNpDoMuMMtSrRixTOw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:54:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ltz6pjzymc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeeleave1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-J3D2LwCXi+CNN8MnSGGMLSxUvVNpDoMuMMtSrRixTOw="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeeleave1.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1758"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J3D2LwCXi+CNN8MnSGGMLSxUvVNpDoMuMMtSrRixTOw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:54:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-J3D2LwCXi+CNN8MnSGGMLSxUvVNpDoMuMMtSrRixTOw="
+        }
+      ]
+    },
+    {
+      "Route": "images/EmployeeleaveStatus.lq6rhmc5nw.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\EmployeeleaveStatus.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3SNkGstJVqUYE0I83bb0YebTj7RA3FBMW1bSN6hP43U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:49:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lq6rhmc5nw"
+        },
+        {
+          "Name": "label",
+          "Value": "images/EmployeeleaveStatus.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3SNkGstJVqUYE0I83bb0YebTj7RA3FBMW1bSN6hP43U="
+        }
+      ]
+    },
+    {
+      "Route": "images/EmployeeleaveStatus.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\EmployeeleaveStatus.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1217"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3SNkGstJVqUYE0I83bb0YebTj7RA3FBMW1bSN6hP43U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:49:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3SNkGstJVqUYE0I83bb0YebTj7RA3FBMW1bSN6hP43U="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeemessage.85srti05s9.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "949"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xDN+unakiX7UK23GYU+RUaV4yeluc8QVkXuoNzjdR1U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:48:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "85srti05s9"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeemessage.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xDN+unakiX7UK23GYU+RUaV4yeluc8QVkXuoNzjdR1U="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeemessage.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "949"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xDN+unakiX7UK23GYU+RUaV4yeluc8QVkXuoNzjdR1U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:48:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xDN+unakiX7UK23GYU+RUaV4yeluc8QVkXuoNzjdR1U="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeemessage1.90ntsjrwmf.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1914"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uZG9xWIpR29qkIzyG2nlNizxMV3NxMEWFqvox8Vpwkc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:57:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "90ntsjrwmf"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeemessage1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uZG9xWIpR29qkIzyG2nlNizxMV3NxMEWFqvox8Vpwkc="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeemessage1.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1914"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uZG9xWIpR29qkIzyG2nlNizxMV3NxMEWFqvox8Vpwkc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:57:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uZG9xWIpR29qkIzyG2nlNizxMV3NxMEWFqvox8Vpwkc="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeetask.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eiWSsFwYSyV6U9r21dRWPMm8WYoTbyo9tI8aCopuvQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:46:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eiWSsFwYSyV6U9r21dRWPMm8WYoTbyo9tI8aCopuvQ8="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeetask.uzn8m1gqej.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eiWSsFwYSyV6U9r21dRWPMm8WYoTbyo9tI8aCopuvQ8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:46:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uzn8m1gqej"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeetask.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eiWSsFwYSyV6U9r21dRWPMm8WYoTbyo9tI8aCopuvQ8="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeetask1.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2mgOEMWzr4U5En4sl0hAn4EPcNOoDTPFc0VRUBfK2BE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:56:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2mgOEMWzr4U5En4sl0hAn4EPcNOoDTPFc0VRUBfK2BE="
+        }
+      ]
+    },
+    {
+      "Route": "images/Employeetask1.yewzeza85z.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3637"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2mgOEMWzr4U5En4sl0hAn4EPcNOoDTPFc0VRUBfK2BE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:56:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yewzeza85z"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Employeetask1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2mgOEMWzr4U5En4sl0hAn4EPcNOoDTPFc0VRUBfK2BE="
+        }
+      ]
+    },
+    {
+      "Route": "images/HomeIndex.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\HomeIndex.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5551146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F+LnsYAaLPN3D+EeYysmSOrbg1VlpGgahBuMK+ujFCw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:16:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-F+LnsYAaLPN3D+EeYysmSOrbg1VlpGgahBuMK+ujFCw="
+        }
+      ]
+    },
+    {
+      "Route": "images/HomeIndex.zh98kzg82y.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\HomeIndex.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5551146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F+LnsYAaLPN3D+EeYysmSOrbg1VlpGgahBuMK+ujFCw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:16:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zh98kzg82y"
+        },
+        {
+          "Name": "label",
+          "Value": "images/HomeIndex.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-F+LnsYAaLPN3D+EeYysmSOrbg1VlpGgahBuMK+ujFCw="
+        }
+      ]
+    },
+    {
+      "Route": "images/login.1x7er20fqu.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\login.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lSJLRrnXfWU6pV8mN+QEWaXSbCcxPGrbs0kEBYi8Vms=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:26:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1x7er20fqu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/login.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lSJLRrnXfWU6pV8mN+QEWaXSbCcxPGrbs0kEBYi8Vms="
+        }
+      ]
+    },
+    {
+      "Route": "images/login.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\login.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "640"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lSJLRrnXfWU6pV8mN+QEWaXSbCcxPGrbs0kEBYi8Vms=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:26:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lSJLRrnXfWU6pV8mN+QEWaXSbCcxPGrbs0kEBYi8Vms="
+        }
+      ]
+    },
+    {
+      "Route": "images/loginbg.1vnvmynecg.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\loginbg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8822109"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c+cNKIUTIneyIi075FWr7dvbXdqKqbj1qZ9pnGbTRdk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:59:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1vnvmynecg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/loginbg.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c+cNKIUTIneyIi075FWr7dvbXdqKqbj1qZ9pnGbTRdk="
+        }
+      ]
+    },
+    {
+      "Route": "images/loginbg.jpg",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\loginbg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8822109"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c+cNKIUTIneyIi075FWr7dvbXdqKqbj1qZ9pnGbTRdk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:59:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c+cNKIUTIneyIi075FWr7dvbXdqKqbj1qZ9pnGbTRdk="
+        }
+      ]
+    },
+    {
+      "Route": "images/register.5pklukmi4g.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\register.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9xXby+OS9q6+MPE9ZZfNDw3cuz3lHGsbbkgwWH5iJEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:30:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5pklukmi4g"
+        },
+        {
+          "Name": "label",
+          "Value": "images/register.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9xXby+OS9q6+MPE9ZZfNDw3cuz3lHGsbbkgwWH5iJEE="
+        }
+      ]
+    },
+    {
+      "Route": "images/register.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\register.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1146"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9xXby+OS9q6+MPE9ZZfNDw3cuz3lHGsbbkgwWH5iJEE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 06:30:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9xXby+OS9q6+MPE9ZZfNDw3cuz3lHGsbbkgwWH5iJEE="
+        }
+      ]
+    },
+    {
+      "Route": "images/taskscheduling.gif",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\taskscheduling.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6xHPJs3kyYW4OuopGhxV0r3NESCu8UeD3rjtEQQjho0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 05:56:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6xHPJs3kyYW4OuopGhxV0r3NESCu8UeD3rjtEQQjho0="
+        }
+      ]
+    },
+    {
+      "Route": "images/taskscheduling.t2fnqejby9.gif",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\taskscheduling.gif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24779"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/gif"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6xHPJs3kyYW4OuopGhxV0r3NESCu8UeD3rjtEQQjho0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 05:56:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t2fnqejby9"
+        },
+        {
+          "Name": "label",
+          "Value": "images/taskscheduling.gif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6xHPJs3kyYW4OuopGhxV0r3NESCu8UeD3rjtEQQjho0="
+        }
+      ]
+    },
+    {
+      "Route": "images/teams.jt2p4z7vb7.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\teams.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h/qGPNIsgIYB34nTpHO5oV5wkasXlOu2UQ+TZ+XTOwI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:15:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jt2p4z7vb7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/teams.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-h/qGPNIsgIYB34nTpHO5oV5wkasXlOu2UQ+TZ+XTOwI="
+        }
+      ]
+    },
+    {
+      "Route": "images/teams.png",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\teams.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1530"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"h/qGPNIsgIYB34nTpHO5oV5wkasXlOu2UQ+TZ+XTOwI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:15:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-h/qGPNIsgIYB34nTpHO5oV5wkasXlOu2UQ+TZ+XTOwI="
         }
       ]
     },
@@ -6550,6 +8734,96 @@
       ]
     },
     {
+      "Route": "RoleBasedJWTMVC.25mdlgu0x3.bundle.scp.css",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RoleBasedJWTMVC.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:00:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "25mdlgu0x3"
+        },
+        {
+          "Name": "label",
+          "Value": "RoleBasedJWTMVC.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4="
+        }
+      ]
+    },
+    {
+      "Route": "RoleBasedJWTMVC.25mdlgu0x3.styles.css",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\RoleBasedJWTMVC.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 07:00:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "25mdlgu0x3"
+        },
+        {
+          "Name": "label",
+          "Value": "RoleBasedJWTMVC.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4="
+        }
+      ]
+    },
+    {
       "Route": "RoleBasedJWTMVC.bundle.scp.css",
       "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RoleBasedJWTMVC.bundle.scp.css",
       "Selectors": [],
@@ -6560,7 +8834,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1979"
+          "Value": "2060"
         },
         {
           "Name": "Content-Type",
@@ -6568,11 +8842,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=\""
+          "Value": "\"Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 09:41:11 GMT"
+          "Value": "Wed, 04 Jun 2025 07:00:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6582,97 +8856,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8="
-        }
-      ]
-    },
-    {
-      "Route": "RoleBasedJWTMVC.gy6k4cvdbg.bundle.scp.css",
-      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RoleBasedJWTMVC.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1979"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 09:41:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gy6k4cvdbg"
-        },
-        {
-          "Name": "label",
-          "Value": "RoleBasedJWTMVC.bundle.scp.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8="
-        }
-      ]
-    },
-    {
-      "Route": "RoleBasedJWTMVC.gy6k4cvdbg.styles.css",
-      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\RoleBasedJWTMVC.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1979"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 09:41:11 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "gy6k4cvdbg"
-        },
-        {
-          "Name": "label",
-          "Value": "RoleBasedJWTMVC.styles.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8="
+          "Value": "sha256-Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4="
         }
       ]
     },
@@ -6687,7 +8871,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1979"
+          "Value": "2060"
         },
         {
           "Name": "Content-Type",
@@ -6695,11 +8879,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8=\""
+          "Value": "\"Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 09:41:11 GMT"
+          "Value": "Wed, 04 Jun 2025 07:00:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6709,7 +8893,89 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-OMRb/xtaJXZkbhHptvv3JWuU8YwUnpBv9T9druQE4f8="
+          "Value": "sha256-Vgb/+2u8G5YeJzPV4kshrDhri6GhYkdUxrZgDHEZdn4="
+        }
+      ]
+    },
+    {
+      "Route": "sounds/notification-alert.h0f5shd9te.mp3",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\sounds\\notification-alert.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34560"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QWvvNEJ+UdYJVf7wSFm6c8b+54uizmfULmt/dSrta+s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Jun 2025 07:23:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h0f5shd9te"
+        },
+        {
+          "Name": "label",
+          "Value": "sounds/notification-alert.mp3"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QWvvNEJ+UdYJVf7wSFm6c8b+54uizmfULmt/dSrta+s="
+        }
+      ]
+    },
+    {
+      "Route": "sounds/notification-alert.mp3",
+      "AssetFile": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\sounds\\notification-alert.mp3",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34560"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "audio/mpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QWvvNEJ+UdYJVf7wSFm6c8b+54uizmfULmt/dSrta+s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Jun 2025 07:23:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QWvvNEJ+UdYJVf7wSFm6c8b+54uizmfULmt/dSrta+s="
         }
       ]
     }

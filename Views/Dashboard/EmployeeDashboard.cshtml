@@ -1,12 +1,31 @@
 @{
     ViewData["Title"] = "EmployeeDashboard";
 }
-
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
         background-color: #f9f9f9;
+        margin-left: 240px;
+        padding: 40px;
+        flex: 1;
+        background-color: #f5f7fa;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url("/images/employeedashboard.jpg") no-repeat center center fixed; 
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
     }
 
     .wrapper {
@@ -14,44 +33,51 @@
         min-height: 100vh;
     }
 
-    .sidebar {
-        width: 220px;
+     .sidebar {
+        width: 240px;
         background-color: #2c3e50;
-        padding: 20px;
-        color: white;
+        color: #ecf0f1;
+        padding: 25px 20px;
         position: fixed;
         top: 0;
+        bottom: 0;
         left: 0;
-        height: 100vh;
         overflow-y: auto;
+        margin-top: 55px;
     }
 
     .sidebar h2 {
-        margin-bottom: 30px;
-        font-size: 22px;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #34495e;
+        padding-bottom: 10px;
+        text-transform: uppercase;
     }
 
     .sidebar ul {
-        list-style-type: none;
+        list-style: none;
         padding: 0;
+        margin: 0;
     }
 
     .sidebar ul li {
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 
     .sidebar ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
         display: block;
-        padding: 8px 10px;
-        border-radius: 5px;
-        transition: background-color 0.2s ease;
+        padding: 10px 14px;
+        color: #ecf0f1;
+        font-size: 15px;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.2s ease;
     }
 
     .sidebar ul li a:hover {
-        background-color: #34495e; /* Slightly lighter on hover */
+        background-color: #1abc9c;
     }
 
     .content {
@@ -127,38 +153,59 @@
         border-bottom: none;
     }
 </style>
+</head>
+<body>
+    
+
 
 <div class="wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
-        <h2>Employee Menu</h2>
+       <h2>
+    <img src="/images/employee.png" alt="Admin Icon" style="width:30px; height:30px; vertical-align:middle; margin-right:10px;">
+    Employee
+</h2>
+
         <ul>
-            <li><a asp-controller="DashboardData" asp-action="EmployeeTasks">Tasks</a></li>
-            <li><a asp-controller="Leave" asp-action="RequestLeave">Leave Approval</a></li>
-            <li><a asp-controller="DashboardData" asp-action="Chat">Messages</a></li>
-            <li><a asp-controller="Leave" asp-action="ApprovedRequests">Approved Requests</a></li>
-            <li><a asp-controller="Leave" asp-action="RejectedRequests">Rejected Requests</a></li>
+           <li>
+                <a asp-controller="DashboardData" asp-action="EmployeeTasks">
+                    <img src="/images/Employeetask1.png" alt="Tasks" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    Tasks
+                </a>
+            </li>
 
-            @* <li><a asp-controller="Dashboard" asp-action="Chat">Messages</a></li> *@
+             <li>
+                <a asp-controller="Leave" asp-action="RequestLeave">
+                    <img src="/images/EmployeeLeave1.png" alt="Tasks" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    LeaveRequest
+                </a>
+            </li>
+            <li>
+                <a asp-controller="DashboardData" asp-action="Chat">
+                    <img src="/images/Employeemessage1.png" alt="Tasks" style="width:20px; height:20px; vertical-align:middle; margin-right:8px; color:red">
+                    Message
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Leave" asp-action="EmployeeLeaveStatus">
+                    <img src="/images/EmployeeleaveStatus.png" alt="Tasks" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    LeaveStatus
+                </a>
+            </li>
 
+           
+
+          
         </ul>
     </div>
 
     <!-- Main Content -->
     <div class="content">
         <div class="dashboard-container">
-            <div class="dashboard-header">
-                @if (ViewBag.EmployeeName != null)
-                {
-                    <h2>Welcome, @ViewBag.EmployeeName!</h2>
-                }
-                else
-                {
-                    <h2>Welcome, Employee!</h2>
-                }
+            <div class="dashboard-header" style="color: #0d6efd;">
+              <h2>Welcome @User.Identity.Name</h2>
 
-                @* <p>Email: @ViewBag.EmployeeEmail</p> *@
-                <p>Here’s a quick overview of your tasks and activities.</p>
+           
             </div>
 
             <div class="cards">
@@ -188,3 +235,6 @@
         </div>
     </div>
 </div>
+
+</body>
+</html>

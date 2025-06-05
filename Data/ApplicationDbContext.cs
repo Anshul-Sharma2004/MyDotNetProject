@@ -24,7 +24,9 @@ namespace RoleBasedJWTMVC.Data
         // public DbSet<AddTeam> AddTeams { get; set; }
         public DbSet<Team> Teams { get; set; }
 
-       public DbSet<LeaveRequest> LeaveRequests { get; set; }
+        public DbSet<LeaveRequest> LeaveRequests { get; set; }
+       
+    //    public DbSet<MonthlyTaskData> MonthlyTaskDatas { get; set; }
 
         
         

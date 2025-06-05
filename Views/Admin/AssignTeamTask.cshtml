@@ -1,6 +1,9 @@
 @{
     ViewData["Title"] = "Admin - Task Assigner Team";
     Layout = "/Views/Shared/_Layout.cshtml";
+   @* @await Html.PartialAsync("~/Views/Dashboard/AdminDashboard.cshtml") *@
+
+    
 }
 
 <style>
@@ -22,9 +25,11 @@
     }
 
     #emailInputs label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 10px;
+    using RoleBasedJWTMVC.Controllers;
+#line default
+using RoleBasedJWTMVC.Controllers;
+#line default
+    margin-bottom: 10px;
         color: #444;
     }
 
@@ -154,10 +159,10 @@
 
         <div id="teamMembersContainer"></div>
 
-        <div>
+        @* <div>
             <label for="memberName">MemberName:</label>
             <input type="text" id="memberName" name="memberName" required />
-        </div>
+        </div> *@
 
         <div>
             <label for="taskTitle">Task Title:</label>
@@ -239,7 +244,7 @@
                     emailInputsDiv.appendChild(emailDiv);
 
                     if (index === 0) {
-                        document.getElementById('memberName').value = member.memberName;
+                        @* document.getElementById('memberName').value = member.memberName; *@
                         document.getElementById('specialization').value = member.specialization;
                     }
 

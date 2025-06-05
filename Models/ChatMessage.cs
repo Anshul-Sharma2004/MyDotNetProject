@@ -1,19 +1,19 @@
 using System;
-namespace RoleBasedJWTMVC.Models;
 
-public class ChatMessage
+namespace RoleBasedJWTMVC.Models
 {
-    public int Id { get; set; }
-    public string SenderId { get; set; }
-    public string ReceiverId { get; set; }
-    public string Message { get; set; }
-    public DateTime Timestamp { get; set; }
-
-    public ChatMessage()
+    public class ChatMessage
     {
-        Timestamp = DateTime.UtcNow;
+        public int Id { get; set; }
+        public string SenderId { get; set; }
+        public string ReceiverId { get; set; }
+        public string Message { get; set; }        
+        public DateTime Timestamp { get; set; }
+        public string SenderName { get; set; }
+
+        public ChatMessage()
+        {
+            Timestamp = DateTime.UtcNow;
+        }
     }
 }
-
-
-

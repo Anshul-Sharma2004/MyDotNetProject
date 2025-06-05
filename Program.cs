@@ -55,7 +55,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.LoginPath = "/Auth/Login";
     options.AccessDeniedPath = "/Auth/AccessDenied";
-    options.ExpireTimeSpan = TimeSpan.FromDays(365); // 1 year
+    options.ExpireTimeSpan = TimeSpan.FromDays(365); 
     options.SlidingExpiration = true;
     options.Cookie.HttpOnly = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
@@ -112,7 +112,7 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()
-            .SetIsOriginAllowed(_ => true); // Allow any origin
+            .SetIsOriginAllowed(_ => true); 
     });
 });
 
@@ -147,13 +147,13 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Map SignalR hub
+
 app.MapHub<ChatHub>("/chathub");
 
-// Default route: Auth controller login action
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 // Uncomment to enable Swagger UI in dev environment
 // if (app.Environment.IsDevelopment())

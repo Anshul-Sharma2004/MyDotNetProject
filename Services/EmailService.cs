@@ -42,33 +42,35 @@ namespace RoleBasedJWTMVC.Services
             }
         }
 
-        public async Task SendTeamTaskAssignedEmailsAsync(List<TeamAssign> teamAssignments)
-        {
-            foreach (var assignment in teamAssignments)
-            {
-                var subject = $"New Team Task Assigned: {assignment.TaskTitle}";
-                var body = $@"
-                    <p>Dear {assignment.MemberName},</p>
-                    <p>You have been assigned a new team task.</p>
-                    <p><strong>Title:</strong> {assignment.TaskTitle}</p>
-                    <p><strong>Description:</strong> {assignment.TaskDescription}</p>
-                    <p><strong>Technology:</strong> {assignment.Technology}</p>
-                    <p><strong>Assigned Date:</strong> {assignment.AssignedDate:dd-MM-yyyy}</p>
-                    <p><strong>Due Date:</strong> {assignment.DueDate:dd-MM-yyyy}</p>
-                    <br />
-                    <p>Kindly coordinate with your team and start working.</p>
-                    <p>Regards,<br/>Admin Team</p>";
+       public async Task SendTeamTaskAssignedEmailsAsync(List<TeamAssign> teamAssignments)
+{
+    foreach (var assignment in teamAssignments)
+    {
+        var subject = $"New Team Task Assigned: {assignment.TaskTitle}";
+        var body = $@"
+            <p>Hello {assignment.MemberName},</p>
+            <p>You have been assigned a new team task:</p>
+            <p><strong>Title:</strong> {assignment.TaskTitle}</p>
+            <p><strong>Description:</strong> {assignment.TaskDescription}</p>
+            <p><strong>Technology:</strong> {assignment.Technology}</p>
+            <p><strong>Assigned Date:</strong> {assignment.AssignedDate:dd-MM-yyyy}</p>
+            <p><strong>Due Date:</strong> {assignment.DueDate:dd-MM-yyyy}</p>
+            <br />
+            <p>Please check the system for more details.</p>
+            <p>Regards,<br/>Admin Team</p>";
 
-                try
-                {
-                    await SendEmailAsync(assignment.Email, subject, body);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to send email to {assignment.Email}: {ex.Message}");
-                }
-            }
+        try
+        {
+            await SendEmailAsync(assignment.Email, subject, body);
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Email failed for {assignment.Email}: {ex.Message}");
+        }
+    }
+}
+
+        
 
         public async Task SendTeamTaskAssignedEmailAsync(string toEmail, string memberName, string taskTitle, string technology, string taskDescription, DateTime assignedDate, DateTime dueDate)
         {
@@ -119,5 +121,26 @@ namespace RoleBasedJWTMVC.Services
             mailMessage.To.Add(toEmail);
             await smtpClient.SendMailAsync(mailMessage);
         }
+
+        public async Task SendLeaveStatusEmail(string toEmail, string status)
+{
+    var subject = "Leave Request Status Update";
+    var body = $@"
+        <p>Dear Employee,</p>
+        <p>Your leave request has been <strong>{status}</strong>.</p>
+        <p>Please check your dashboard for more details.</p>
+        <br />
+        <p>Regards,<br/>Admin Team</p>";
+
+    try
+    {
+        await SendEmailAsync(toEmail, subject, body);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Email error for {toEmail}: {ex.Message}");
+    }
+}
+
     }
 }

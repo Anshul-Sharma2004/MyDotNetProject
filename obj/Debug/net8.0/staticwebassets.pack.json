@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\RoleBasedJWTMVC.bundle.scp.css",
-      "PackagePath": "staticwebassets\\RoleBasedJWTMVC.gy6k4cvdbg.bundle.scp.css"
+      "PackagePath": "staticwebassets\\RoleBasedJWTMVC.25mdlgu0x3.bundle.scp.css"
     },
     {
       "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\css\\site.css",
@@ -11,6 +11,90 @@
     {
       "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3870277.jpg",
+      "PackagePath": "staticwebassets\\images\\3870277.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\3895889.jpg",
+      "PackagePath": "staticwebassets\\images\\3895889.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\AdminDashboard.jpg",
+      "PackagePath": "staticwebassets\\images\\AdminDashboard.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave.png",
+      "PackagePath": "staticwebassets\\images\\Employeeleave.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeeleave1.png",
+      "PackagePath": "staticwebassets\\images\\Employeeleave1.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\EmployeeleaveStatus.png",
+      "PackagePath": "staticwebassets\\images\\EmployeeleaveStatus.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage.png",
+      "PackagePath": "staticwebassets\\images\\Employeemessage.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeemessage1.png",
+      "PackagePath": "staticwebassets\\images\\Employeemessage1.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask.png",
+      "PackagePath": "staticwebassets\\images\\Employeetask.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\Employeetask1.png",
+      "PackagePath": "staticwebassets\\images\\Employeetask1.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\HomeIndex.jpg",
+      "PackagePath": "staticwebassets\\images\\HomeIndex.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\administrator-male.png",
+      "PackagePath": "staticwebassets\\images\\administrator-male.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\assignteamtask.png",
+      "PackagePath": "staticwebassets\\images\\assignteamtask.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\email.png",
+      "PackagePath": "staticwebassets\\images\\email.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employee.png",
+      "PackagePath": "staticwebassets\\images\\employee.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\employeedashboard.jpg",
+      "PackagePath": "staticwebassets\\images\\employeedashboard.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\login.png",
+      "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\loginbg.jpg",
+      "PackagePath": "staticwebassets\\images\\loginbg.jpg"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\register.png",
+      "PackagePath": "staticwebassets\\images\\register.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\taskscheduling.gif",
+      "PackagePath": "staticwebassets\\images\\taskscheduling.gif"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\images\\teams.png",
+      "PackagePath": "staticwebassets\\images\\teams.png"
     },
     {
       "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\js\\site.js",
@@ -255,6 +339,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\registerLogin\\rolebasedjwtmvc\\wwwroot\\sounds\\notification-alert.mp3",
+      "PackagePath": "staticwebassets\\sounds\\notification-alert.mp3"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.RoleBasedJWTMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

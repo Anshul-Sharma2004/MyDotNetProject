@@ -13,6 +13,7 @@ using RoleBasedJWTMVC.Services;
 namespace RoleBasedJWTMVC.Controllers
 {
     [Authorize]
+    // [Route("Admin")]
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -162,15 +163,15 @@ namespace RoleBasedJWTMVC.Controllers
 
         [HttpPost]
         public async Task<IActionResult> AssignTeamTask(
-            [FromForm] List<string> TeamEmails,
-            [FromForm] List<string> MemberNames,
-            [FromForm] List<string> MemberIds,
-            [FromForm] List<string> TaskIds,
-            [FromForm] string TaskTitle,
-            [FromForm] string TaskTypes,
-            [FromForm] string Technology,
-            [FromForm] DateTime DueDate,
-            [FromForm] string TaskDescription)
+     [FromForm] List<string> TeamEmails,
+     [FromForm] List<string> MemberNames,
+     [FromForm] List<string> MemberIds,
+     [FromForm] List<string> TaskIds,
+     [FromForm] string TaskTitle,
+     [FromForm] string TaskTypes,
+     [FromForm] string Technology,
+     [FromForm] DateTime DueDate,
+     [FromForm] string TaskDescription)
         {
             ViewBag.AdminName = User.Identity?.Name ?? "Admin";
 
@@ -192,6 +193,7 @@ namespace RoleBasedJWTMVC.Controllers
                 return View("AssignTeamTask");
             }
 
+            var teamAssignments = new List<TeamAssign>();
             var invalidEmails = new List<string>();
 
             for (int i = 0; i < TeamEmails.Count; i++)
@@ -222,38 +224,31 @@ namespace RoleBasedJWTMVC.Controllers
                     AssignedBy = ViewBag.AdminName
                 };
 
-                _context.TeamAssigns.Add(assignment);
+                teamAssignments.Add(assignment);
 
                 _taskService.AssignTaskToMember(email, memberId, memberName, taskId);
-
-                await _emailService.SendTeamTaskAssignedEmailAsync(
-                    email,
-                    memberName,
-                    TaskTitle,
-                    Technology,
-                    TaskDescription,
-                    assignment.AssignedDate,
-                    DueDate
-                );
             }
+
+            await _context.TeamAssigns.AddRangeAsync(teamAssignments);
 
             try
             {
                 await _context.SaveChangesAsync();
+                await _emailService.SendTeamTaskAssignedEmailsAsync(teamAssignments);
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = $"Database save error: {ex.Message}";
+                TempData["ErrorMessage"] = $"Database or email error: {ex.Message}";
                 return View("AssignTeamTask");
             }
 
             if (invalidEmails.Any())
             {
-                TempData["WarningMessage"] = $"Tasks assigned, but these emails were invalid: {string.Join(", ", invalidEmails)}";
+                TempData["WarningMessage"] = $"Some emails were invalid: {string.Join(", ", invalidEmails)}";
             }
             else
             {
-                TempData["SuccessMessage"] = "Tasks assigned to all team members successfully!";
+                TempData["SuccessMessage"] = "Tasks successfully assigned to all team members!";
             }
 
             return RedirectToAction("AdminDashboard", "Dashboard");
@@ -323,7 +318,6 @@ namespace RoleBasedJWTMVC.Controllers
             }
 
             var employee = await _context.Users.FirstOrDefaultAsync(e => e.Email == email);
-
             if (employee == null)
             {
                 return NotFound("Employee not found.");
@@ -333,16 +327,16 @@ namespace RoleBasedJWTMVC.Controllers
             ViewBag.EmployeeEmail = employee.Email;
 
             ViewBag.TotalTasks = await _context.EmployeeTasks
-                                        .Where(t => t.EmployeeId == employee.Id)
-                                        .CountAsync();
+                .Where(t => t.EmployeeId == employee.Id)
+                .CountAsync();
 
             ViewBag.CompletedTasks = await _context.EmployeeTasks
-                                        .Where(t => t.EmployeeId == employee.Id && t.Status == "Completed")
-                                        .CountAsync();
+                .Where(t => t.EmployeeId == employee.Id && t.Status == "Completed")
+                .CountAsync();
 
             ViewBag.PendingTasks = await _context.EmployeeTasks
-                                        .Where(t => t.EmployeeId == employee.Id && t.Status != "Completed")
-                                        .CountAsync();
+                .Where(t => t.EmployeeId == employee.Id && t.Status != "Completed")
+                .CountAsync();
 
             return View();
         }
@@ -350,46 +344,98 @@ namespace RoleBasedJWTMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> LeaveDashboard()
         {
-            // Assuming you have a DbSet<LeaveRequest> in your DbContext
             var leaves = await _context.LeaveRequests.ToListAsync();
             return View(leaves);
         }
-[HttpPost]
-public async Task<IActionResult> Approve(int id)
-{
-    var leave = await _context.LeaveRequests.FindAsync(id);
-    if (leave == null)
-        return NotFound();
 
-    leave.Status = "Approved";
-    await _context.SaveChangesAsync();
+        [HttpPost]
+        public async Task<IActionResult> Approve(int id)
+        {
+            var leave = await _context.LeaveRequests.FindAsync(id);
+            if (leave == null)
+                return NotFound();
 
-    // Optional: send email notification using _emailService
-    // await _emailService.SendLeaveStatusEmail(leave.EmployeeEmail, "Approved");
+            leave.Status = LeaveStatus.Accepted;
+            await _context.SaveChangesAsync();
 
-    return RedirectToAction("AdminDashboard", "Dashboard");
 
-}
+            // Optional: send email notification
+            await _emailService.SendLeaveStatusEmail(leave.EmployeeEmail, "Approved");
 
-[HttpPost]
-public async Task<IActionResult> Reject(int id)
-{
-    var leave = await _context.LeaveRequests.FindAsync(id);
-    if (leave == null)
-        return NotFound();
+            return RedirectToAction("AdminDashboard", "Dashboard");
+        }
 
-    leave.Status = "Rejected";
-    await _context.SaveChangesAsync();
+        [HttpPost]
+        public async Task<IActionResult> Reject(int id)
+        {
+            var leave = await _context.LeaveRequests.FindAsync(id);
+            if (leave == null)
+                return NotFound();
 
-    // Optional: send email notification using _emailService
-    // await _emailService.SendLeaveStatusEmail(leave.EmployeeEmail, "Rejected");
+            leave.Status = LeaveStatus.Rejected;
+            await _context.SaveChangesAsync();
 
-   return RedirectToAction("AdminDashboard", "Dashboard");
+            // Optional: send email notification
+            await _emailService.SendLeaveStatusEmail(leave.EmployeeEmail, "Rejected");
 
-}
+
+            return RedirectToAction("AdminDashboard", "Dashboard");
+        }
+        [HttpGet]
+        [Route("Admin/GetTotalTasksAssignedByAdmin")]
+        public async Task<IActionResult> GetTotalTasksAssignedByAdmin()
+        {
+            var adminId = User.Identity?.Name ?? "Default EmployeeId ";
+            Console.WriteLine("Current Admin: " + adminId);
+
+
+            if (string.IsNullOrEmpty(adminId))
+                return Unauthorized();
+
+            var totalTasks = await _context.TaskAssignments
+                    .CountAsync(t => t.AssignedBy == adminId);
+
+            return Ok(totalTasks);
+        }
+        [HttpGet("GetTotalEmployees")]
+        public async Task<IActionResult> GetTotalEmployees()
+        {
+            var count = await _context.Employees.CountAsync();
+            return Ok(count);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetMonthlyTaskAssignmentsByAdmin()
+        {
+            var adminName = User.Identity?.Name;
+            if (string.IsNullOrEmpty(adminName))
+                return Unauthorized();
+
+            var monthlyCounts = new int[12];
+
+            var assignments = await _context.TeamAssigns
+                .Where(t => t.AssignedBy == adminName)
+                .ToListAsync();
+
+            foreach (var task in assignments)
+            {
+                var month = task.AssignedDate.Month;
+                monthlyCounts[month - 1]++;
+            }
+
+            return Ok(monthlyCounts);
+        }
+
+
+        
 
 
 
         
+
+
+
+
     }
 }

@@ -1,76 +1,40 @@
 @model RoleBasedJWTMVC.Models.Employee
+ 
 
 <h2>ChatBox for @Model.Name</h2>
-<p>Email: @Model.Email</p>
+@* <p>Email: @Model.Email</p> *@
 
-<h2>Real-Time Chat</h2>
+@* <h2>Real-Time Chat</h2> *@
 
-<div id="chat-box" class="chat-container"></div>
-
-<div class="chat-input">
-    <input type="text" id="messageInput" placeholder="Type a message..." />
-    <button onclick="sendMessage()">Send</button>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
-
-<script>
-    const receiverEmail = '@Model.Email';
-
-    const connection = new signalR.HubConnectionBuilder()
-        .withUrl("/chathub", {
-            accessTokenFactory: () => localStorage.getItem("jwt") // Optional if you're using JWT auth
-        })
-        .build();
-
-    connection.on("ReceiveMessage", function (from, message) {
-        const isSender = from === '@User.Identity.Name'; // Or compare using full email if needed
-        const chatBox = document.getElementById("chat-box");
-
-        // Create message element with transition support
-        const messageHtml = `
-            <div class="message ${isSender ? 'sent' : 'received'}">
-                <span class="bubble"><b>${isSender ? 'You' : from}:</b> ${message}</span>
-            </div>`;
-
-        const temp = document.createElement("div");
-        temp.innerHTML = messageHtml;
-        const msgEl = temp.firstElementChild;
-        chatBox.appendChild(msgEl);
-
-        // Trigger transition by adding 'show' class after appending
-        requestAnimationFrame(() => msgEl.classList.add("show"));
-
-        // Scroll to bottom
-        chatBox.scrollTop = chatBox.scrollHeight;
-    });
-
-    connection.start().then(() => {
-        console.log("SignalR Connected.");
-    }).catch(err => {
-        console.error("Connection error:", err.toString());
-    });
-
-    function sendMessage() {
-        const messageInput = document.getElementById("messageInput");
-        const message = messageInput.value.trim();
-        if (!message) return;
-
-        connection.invoke("SendMessage", receiverEmail, message)
-            .then(() => {
-                messageInput.value = "";
-            })
-            .catch(err => {
-                console.error("Send error:", err.toString());
-            });
-    }
-</script>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 <a href="/Views/Dashboard/AdminDashboard">Go to AdminDashboard</a>
-
-<!-- WhatsApp-like Chat CSS -->
 <style>
+    body{
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin-left: 240px;
+        padding: 40px;
+        flex: 1;
+        background-color: #f5f7fa;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url("/images/email.png") no-repeat center center fixed; 
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        
+    
+
+    }
 .chat-container {
     width: 420px;
     height: 360px;
@@ -178,6 +142,84 @@
     border-bottom-left-radius: 5px;
 }
 </style>
+
+</head>
+<body>
+    <div id="chat-box" class="chat-container"></div>
+
+<div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+<script>
+    const receiverEmail = '@Model.Email';
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chathub", {
+            accessTokenFactory: () => localStorage.getItem("jwt") // Optional if you're using JWT auth
+        })
+        .build();
+
+    connection.on("ReceiveMessage", function (from, message) {
+        const isSender = from === '@User.Identity.Name'; // Or compare using full email if needed
+        const chatBox = document.getElementById("chat-box");
+
+        // Create message element with transition support
+        const messageHtml = `
+            <div class="message ${isSender ? 'sent' : 'received'}">
+                <span class="bubble"><b>${isSender ? 'You' : from}:</b> ${message}</span>
+            </div>`;
+
+        const temp = document.createElement("div");
+        temp.innerHTML = messageHtml;
+        const msgEl = temp.firstElementChild;
+        chatBox.appendChild(msgEl);
+
+        // Trigger transition by adding 'show' class after appending
+        requestAnimationFrame(() => msgEl.classList.add("show"));
+
+        // Scroll to bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    connection.start().then(() => {
+        console.log("SignalR Connected.");
+    }).catch(err => {
+        console.error("Connection error:", err.toString());
+    });
+
+    function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        connection.invoke("SendMessage", receiverEmail, message)
+            .then(() => {
+                messageInput.value = "";
+            })
+            .catch(err => {
+                console.error("Send error:", err.toString());
+            });
+    }
+</script>
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- WhatsApp-like Chat CSS -->
+
 
 
 

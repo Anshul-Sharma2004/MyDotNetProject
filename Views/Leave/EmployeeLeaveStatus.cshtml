@@ -1,0 +1,165 @@
+@model List<RoleBasedJWTMVC.Models.LeaveRequest>
+
+@{
+    ViewData["Title"] = "Leave Status";
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f9fc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 20px 25px;
+        background: #fff;
+        border-radius: 10px;
+        @* box-shadow: 0 6px 15px rgba(0,0,0,0.1); *@
+        overflow-x: auto; /* horizontal scroll if table too wide */
+    }
+
+    h2 {
+        margin-bottom: 24px;
+        font-weight: 700;
+        color: #2c3e50;
+        letter-spacing: 0.03em;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 8px; /* space between rows */
+        min-width: 700px; /* allow horizontal scroll on small devices */
+    }
+
+    thead tr {
+        background-color: #007bff;
+        color: #ffffff;
+        text-align: left;
+        font-weight: 700;
+        border-radius: 8px;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    thead th {
+        padding: 12px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    tbody {
+        display: block;
+        max-height: 500px; /* fixed height with scroll for large data */
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    tbody tr {
+        background-color: #fefefe;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+        background-color: #e1efff;
+    }
+
+    tbody td {
+        padding: 14px 20px;
+        vertical-align: middle;
+        border: none;
+        color: #444;
+        word-wrap: break-word;
+    }
+
+    /* First column number styling */
+    tbody td:first-child {
+        font-weight: 1000;
+        color: #007bff;
+        width: 100px;
+        text-align: center;
+    }
+
+    /* Status column with subtle color based on status text */
+    tbody td:nth-child(7) {
+        font-weight: 500;
+        text-transform: lowercase;
+        letter-spacing: 0.05em;
+        width: 100px;
+    }
+    tbody td:nth-child(7):contains("Approved") {
+        color: #3b794a; /* green */
+    }
+    tbody td:nth-child(7):contains("Pending") {
+        color: #ffc107; /* amber */
+    }
+    tbody td:nth-child(7):contains("Rejected") {
+        color: #dc3545; /* red */
+    }
+
+    /* Alert style */
+    .alert-info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+        padding: 18px 25px;
+        border-radius: 6px;
+        margin-top: 40px;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container">
+    <h2>My Leave Requests</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Reason</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Request Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@Model[i].EmployeeName</td>
+                        <td>@Model[i].EmployeeEmail</td>
+                        <td>@Model[i].Reason</td>
+                        <td>@Model[i].StartDate.ToShortDateString()</td>
+                        <td>@Model[i].EndDate.ToShortDateString()</td>
+                        <td>@Model[i].Status</td>
+                        <td>@Model[i].RequestDate.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">No leave requests found.</div>
+    }
+</div>

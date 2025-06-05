@@ -111,91 +111,98 @@ namespace RoleBasedJWTMVC.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginDto dto)
+       [HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Login(LoginDto dto)
+{
+    if (!ModelState.IsValid)
+        return View(dto);
+
+    var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == dto.Email);
+    if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+    {
+        ModelState.AddModelError("LoginFailed", "Invalid credentials.");
+        return View(dto);
+    }
+
+    // Claims for Cookie Authentication - added ClaimTypes.Email
+    var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.Name, user.Name), // So User.Identity.Name = user.Name
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Email, user.Email), // Added email claim here
+        new Claim(ClaimTypes.Role, user.Role),
+        new Claim("RegisterID", user.RegisterID.ToString()),
+        new Claim("Name", user.Name ?? ""),
+        new Claim("PhoneNumber", user.PhoneNumber ?? ""),
+        new Claim("Department", user.Department ?? "")
+    };
+
+    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+    var principal = new ClaimsPrincipal(identity);
+
+    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, new AuthenticationProperties
+    {
+        IsPersistent = true,
+        ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1)
+    });
+
+    // Generate JWT token as before
+    var token = GenerateJwtToken(user);
+    Response.Cookies.Append("jwt", token, new CookieOptions
+    {
+        HttpOnly = true,
+        Secure = Request.IsHttps,
+        Expires = DateTimeOffset.UtcNow.AddDays(1)
+    });
+
+    return user.Role switch
+    {
+        "Admin" => RedirectToAction("AdminDashboard", "Dashboard"),
+        "Employee" => RedirectToAction("EmployeeDashboard", "Dashboard"),
+        _ => RedirectToAction("Login")
+    };
+}
+
+private string GenerateJwtToken(User user)
+{
+    var jwtKey = _config["Jwt:Key"];
+    if (string.IsNullOrEmpty(jwtKey))
+        throw new Exception("JWT Key is not configured in appsettings.json");
+
+    var key = Encoding.UTF8.GetBytes(jwtKey);
+
+    var tokenDescriptor = new SecurityTokenDescriptor
+    {
+        Subject = new ClaimsIdentity(new[]
         {
-            if (!ModelState.IsValid)
-                return View(dto);
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim("RegisterID", user.RegisterID.ToString()),
+            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.Role, user.Role),
+            new Claim("Department", user.Department ?? "")
+        }),
+        Expires = DateTime.UtcNow.AddDays(1),
+        SigningCredentials = new SigningCredentials(
+            new SymmetricSecurityKey(key),
+            SecurityAlgorithms.HmacSha256Signature)
+    };
 
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == dto.Email);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-            {
-                ModelState.AddModelError("LoginFailed", "Invalid credentials.");
-                return View(dto);
-            }
+    var tokenHandler = new JwtSecurityTokenHandler();
+    var token = tokenHandler.CreateToken(tokenDescriptor);
+    return tokenHandler.WriteToken(token);
+}
 
-            // Cookie-based Claims Identity
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.Name ?? ""),
-                new Claim(ClaimTypes.Email, user.Email ?? ""),  // <--- Updated line here
-                new Claim(ClaimTypes.Role, user.Role ?? ""),
-                new Claim("RegisterID", user.RegisterID.ToString()), 
-                new Claim("PhoneNumber", user.PhoneNumber ?? ""),
-                new Claim("Department", user.Department ?? "")
-            };
 
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+      [HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Logout()
+{
+    Response.Cookies.Delete("jwt");
+    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+    return RedirectToAction("Login", "Auth");
+}
 
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                new AuthenticationProperties { IsPersistent = true });
-
-            // Optional: Also issue a JWT
-            var token = GenerateJwtToken(user);
-            Response.Cookies.Append("jwt", token, new CookieOptions
-            {
-                HttpOnly = true,
-                Secure = Request.IsHttps,
-                Expires = DateTimeOffset.UtcNow.AddDays(1)
-            });
-
-            return user.Role switch
-            {
-                "Admin" => RedirectToAction("AdminDashboard", "Dashboard"),
-                "Employee" => RedirectToAction("EmployeeDashboard", "Dashboard"),
-                _ => RedirectToAction("Login")
-            };
-        }
-
-        private string GenerateJwtToken(User user)
-        {
-            var jwtKey = _config["Jwt:Key"];
-            if (string.IsNullOrEmpty(jwtKey))
-                throw new Exception("JWT Key is not configured in appsettings.json");
-
-            var key = Encoding.UTF8.GetBytes(jwtKey);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim("RegisterID", user.RegisterID.ToString()),
-                    new Claim(ClaimTypes.Name, user.Name),
-                    new Claim(ClaimTypes.Email, user.Email),
-                    new Claim(ClaimTypes.Role, user.Role),
-                    new Claim("Department", user.Department ?? "")
-                }),
-                Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(key),
-                    SecurityAlgorithms.HmacSha256Signature)
-            };
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Logout()
-        {
-            Response.Cookies.Delete("jwt");
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Auth");
-        }
     }
 }

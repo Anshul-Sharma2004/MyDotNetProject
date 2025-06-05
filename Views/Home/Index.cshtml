@@ -2,7 +2,37 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Prevent scrollbars if not needed */
+    }
+
+    .full-page-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* Fills entire screen, cropping if needed */
+        z-index: -1;
+    }
+
+    .overlay-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding-top: 150px;
+        color: white;
+        font-size: 2rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+</style>
+
+<img src="~/images/HomeIndex.jpg" alt="Full Background" class="full-page-image" />
+
+<div class="overlay-content">
+    @* <h1>Welcome to the Homepage</h1> *@
 </div>

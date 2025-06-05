@@ -26,8 +26,8 @@
                 <td>@leave.StartDate.ToShortDateString()</td>
                 <td>@leave.EndDate.ToShortDateString()</td>
                 <td>
-                    <span class="badge bg-@(leave.Status == "Approved" ? "success" : leave.Status == "Rejected" ? "danger" : "warning")">
-                        @leave.Status
+                    <span class="badge bg-@(leave.Status == RoleBasedJWTMVC.Models.LeaveStatus.Accepted ? "success" : leave.Status == RoleBasedJWTMVC.Models.LeaveStatus.Rejected ? "danger" : "warning")">
+                        @leave.Status.ToString()
                     </span>
                 </td>
                 <td>@leave.RequestDate.ToShortDateString()</td>

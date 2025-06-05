@@ -2,64 +2,103 @@
     ViewData["Title"] = "Register";
 }
 
-<style>
-    .register-form {
-        max-width: 400px;
-        margin: 50px auto;
-        padding: 30px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
 
-    .register-form input,
-    .register-form select {
-        width: 100%;
-        padding: 12px 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("/images/loginbg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 
-    .register-form button {
-        width: 100%;
-        padding: 12px 10px;
-        background-color: #28a745;
-        border: none;
-        color: white;
-        font-size: 16px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+}
 
-    .register-form button:hover {
-        background-color: #218838;
-    }
+.register-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 25px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    @* position: fixed; *@
+    margin-left: 40%;
 
-    .register-form a {
-        display: inline-block;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #007bff;
-        font-weight: 500;
-    }
+}
 
-    .register-form a:hover {
-        color: #e4950b;
-    }
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #333;
+}
 
-    .link-container {
-        text-align: right;
-        margin-top: -10px;
-    }
-</style>
+.register-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
-<h2 class="text-center">Register</h2>
+.register-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
 
-<form method="post" asp-controller="Auth" asp-action="Register" class="register-form">
+.register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #0056b3;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link-container a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
+
+
+    </style>
+</head>
+<body>
+    <form method="post" asp-controller="Auth" asp-action="Register" class="register-form">
+    <h2 class="text-center">
+    <img src="/images/register.png" alt="register Icon" style="width:30px; height:30px; vertical-align:middle; margin-right:10px;">
+    Register
+</h2>
     <input name="RegisterID" placeholder="RegID" required />
     <input name="Name" placeholder="Name" required />
     <input name="Email" placeholder="Email" type="email" required />
@@ -91,3 +130,10 @@
         <a href="/">back home</a>
     </div>
 </form>
+    
+</body>
+</html>
+
+
+
+

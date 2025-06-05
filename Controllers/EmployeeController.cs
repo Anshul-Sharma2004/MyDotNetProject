@@ -6,8 +6,7 @@ using RoleBasedJWTMVC.Models;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Linq;
-using Microsoft.AspNetCore.SignalR;
-// using System.Security.Claims;
+using System.Collections.Generic;
 
 namespace RoleBasedJWTMVC.Controllers
 {
@@ -21,7 +20,6 @@ namespace RoleBasedJWTMVC.Controllers
             _context = context;
         }
 
-        // GET: /DashboardData/EmployeeTasks
         [Authorize(Roles = "Employee")]
         [HttpGet]
         public async Task<IActionResult> EmployeeTasks()
@@ -31,6 +29,7 @@ namespace RoleBasedJWTMVC.Controllers
                 return Unauthorized();
 
             var employee = await _context.Employees
+            // .Include(t => t.AssignedBy);
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Email == userEmail);
 
@@ -42,15 +41,15 @@ namespace RoleBasedJWTMVC.Controllers
 
             var tasks = await _context.EmployeeTasks
                 .Where(t => t.EmployeeId == employee.Id)
+                .Include(t => t.AssignedBy)
                 .OrderByDescending(t => t.AssignedDate)
                 .ToListAsync();
 
             return View("EmployeeTasks", tasks);
         }
 
-        // POST: Complete Task
-        [HttpPost]
         [Authorize(Roles = "Employee")]
+        [HttpPost]
         public async Task<IActionResult> CompleteTask(int taskId)
         {
             var task = await _context.EmployeeTasks.FindAsync(taskId);
@@ -64,9 +63,8 @@ namespace RoleBasedJWTMVC.Controllers
             return RedirectToAction("EmployeeTasks");
         }
 
-        // POST: Delete Task
-        [HttpPost]
         [Authorize(Roles = "Employee")]
+        [HttpPost]
         public async Task<IActionResult> DeleteTask(int taskId)
         {
             var task = await _context.EmployeeTasks.FindAsync(taskId);
@@ -78,55 +76,98 @@ namespace RoleBasedJWTMVC.Controllers
 
             return RedirectToAction("EmployeeTasks");
         }
-        public string GetUserId(HubConnectionContext connection)
-        {
-            // Use the user's email as the identifier
-            return connection.User?.FindFirst(ClaimTypes.Email)?.Value;
-        }
 
-        // GET: /DashboardData/Chat
         [HttpGet]
         public IActionResult Chat()
         {
-            var users = _context.Employees.ToList();
-            return View("/Views/DashboardData/Chat.cshtml", users);
+            var employees = _context.Employees.ToList();
+            return View("/Views/DashboardData/Chat.cshtml", employees);
         }
 
-        // GET: /DashboardData/ChatBox/{empId}
+
         [HttpGet]
-        public IActionResult ChatBox(int empId)
+        public async Task<IActionResult> ChatBox(int EmpId)
         {
-            var employee = _context.Employees.FirstOrDefault(e => e.Id == empId);
-            if (employee == null)
+            var senderEmail = User.FindFirstValue(ClaimTypes.Email);
+            var sender = await _context.Employees.FirstOrDefaultAsync(e => e.Email == senderEmail);
+            if (sender == null)
                 return NotFound();
 
-            var currentUserEmail = User.FindFirstValue(ClaimTypes.Email);
-            if (string.IsNullOrEmpty(currentUserEmail))
-                return Unauthorized();
+            // Try finding the receiver in Employees
+            var receiver = await _context.Employees.FindAsync(EmpId);
 
-            var messages = _context.ChatMessages
-                .Where(m =>
-                    (m.SenderId == currentUserEmail && m.ReceiverId == employee.Email) ||
-                    (m.SenderId == employee.Email && m.ReceiverId == currentUserEmail)
-                )
-                .OrderBy(m => m.Timestamp)
-                .ToList();
-
-            var viewModel = new ChatBoxViewModel
+            // If not found in Employees, check in Admins
+            if (receiver == null)
             {
-                SenderId = currentUserEmail,
-                ReceiverId = employee.Email,
-                ReceiverName = employee.Name,
-                Messages = messages.Select(m => new Message
+                var admin = await _context.Admins.FindAsync(EmpId); // assuming Admin ID is same type
+                if (admin == null) return NotFound();
+
+                var messages = await _context.ChatMessages
+                    .Where(m => (m.SenderId == sender.Email && m.ReceiverId == admin.Email) ||
+                                (m.SenderId == admin.Email && m.ReceiverId == sender.Email))
+                    .OrderBy(m => m.Timestamp)
+                    .ToListAsync();
+
+                var viewModel = new ChatBoxViewModel
                 {
-                    SenderId = m.SenderId,
-                    Text = m.Message
-                }).ToList()
+                    SenderId = sender.Email,
+                    SenderName = sender.Name,
+                    ReceiverId = admin.Email,
+                    ReceiverName = admin.Name,
+                    Messages = messages
+                };
+
+                return View("/Views/DashboardData/ChatBox.cshtml", viewModel);
+            }
+
+            // Chat with employee (original logic)
+            var employeeMessages = await _context.ChatMessages
+                .Where(m => (m.SenderId == sender.Email && m.ReceiverId == receiver.Email) ||
+                            (m.SenderId == receiver.Email && m.ReceiverId == sender.Email))
+                .OrderBy(m => m.Timestamp)
+                .ToListAsync();
+
+            var employeeViewModel = new ChatBoxViewModel
+            {
+                SenderId = sender.Email,
+                SenderName = sender.Name,
+                ReceiverId = receiver.Email,
+                ReceiverName = receiver.Name,
+                Messages = employeeMessages
             };
 
-            return View(viewModel);
+            return View("/Views/DashboardData/ChatBox.cshtml", employeeViewModel);
         }
-        
-        
+
+[HttpGet("ChatBoxWithAdmin")]
+public async Task<IActionResult> ChatBoxWithAdmin(string adminEmail)
+{
+    var senderEmail = User.FindFirstValue(ClaimTypes.Email);
+    var sender = await _context.Employees.FirstOrDefaultAsync(e => e.Email == senderEmail);
+    var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Email == adminEmail);
+
+    if (sender == null || admin == null)
+        return NotFound();
+
+    var messages = await _context.ChatMessages
+        .Where(m => (m.SenderId == sender.Email && m.ReceiverId == admin.Email) ||
+                    (m.SenderId == admin.Email && m.ReceiverId == sender.Email))
+        .OrderBy(m => m.Timestamp)
+        .ToListAsync();
+
+    var viewModel = new ChatBoxViewModel
+    {
+        SenderId = sender.Email,
+        SenderName = sender.Name,
+        ReceiverId = admin.Email,
+        ReceiverName = admin.Name,
+        Messages = messages
+    };
+
+    return View("/Views/DashboardData/ChatBox.cshtml", viewModel);
+}
+
+
+
     }
 }

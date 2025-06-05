@@ -1,9 +1,11 @@
 @model RoleBasedJWTMVC.Models.ChatBoxViewModel
 
-<h2>ChatBox for @Model.ReceiverName</h2>
-<p>Email: @Model.ReceiverId</p>
 
-<h2>Real-Time Chat</h2>
+<h2>message to @Model.ReceiverName</h2>
+@* <p>Email: @Model.ReceiverId</p> *@
+
+@* <h2>Real-Time Chat</h2> *@
+
 
 <div id="chat-box" class="chat-container">
     @foreach (var message in Model.Messages)
@@ -11,7 +13,7 @@
         var isSender = message.SenderId == Model.SenderId;
 
         <div class="message @(isSender ? "sent" : "received")">
-            <span class="bubble"><b>@(isSender ? "You" : message.SenderId):</b> @message.Text</span>
+            <span class="bubble"><b>@(isSender ? "You" : message.SenderId):</b>@message.Message</span>
         </div>
     }
 </div>
@@ -19,15 +21,24 @@
 <div class="chat-input">
     <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" />
     <button id="sendBtn">Send</button>
+    <audio id="sendSound" src="/sounds/notification-alert.mp3" preload="auto"></audio>
 </div>
-
 <div class="dashboard-link">
     <a asp-controller="Dashboard" asp-action="EmployeeDashboard">Go to Employee Dashboard</a>
 </div>
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
 
 <script>
+     document.getElementById('sendBtn').addEventListener('click', function () {
+        const sound = document.getElementById('sendSound');
+        sound.play();
+        
+        // Add your message send logic here
+        console.log("Message send logic triggered");
+    });
     document.addEventListener("DOMContentLoaded", function () {
         const senderId = '@Model.SenderId';
         const receiverId = '@Model.ReceiverId';
@@ -75,92 +86,142 @@
 </script>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-    }
+   body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eaeaea;
+    padding: 30px 10px;
+    margin: 0;
+}
 
-    .chat-container {
-        width: 350px;
-        height: 350px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        padding: 10px;
-        overflow-y: auto;
-        background-color: #f0f0f0;
-        margin-bottom: 10px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-    .chat-input {
-        display: flex;
-        gap: 8px;
-        width: 350px;
-        margin: 0 auto;
-        align-items: center;
-    }
+p {
+    text-align: center;
+    color: #777;
+    margin-top: 0;
+}
 
-    .chat-input input[type="text"] {
-        flex: 1;
-        padding: 8px;
-        border-radius: 20px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-    }
+.chat-container {
+    max-width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-    .chat-input button {
-        padding: 8px 16px;
-        border: none;
-        background-color: #25D366;
-        color: white;
-        border-radius: 20px;
-        cursor: pointer;
-    }
+.chat-input {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+}
 
-    .message {
-        display: flex;
-        margin: 5px 0;
-    }
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border 0.2s;
+}
 
-    .message.sent {
-        justify-content: flex-end;
-    }
+.chat-input input[type="text"]:focus {
+    outline: none;
+    border-color: #25D366;
+}
 
-    .message.received {
-        justify-content: flex-start;
-    }
+.chat-input button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #25D366;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-    .bubble {
-        max-width: 70%;
-        padding: 10px;
-        border-radius: 15px;
-        font-size: 14px;
-        line-height: 1.4;
-        background-color: #dcf8c6;
-        color: #000;
-    }
+.chat-input button:hover {
+    background-color: #1fa152;
+}
 
-    .message.sent .bubble {
-        background-color: #25D366;
-        color: white;
-        text-align: right;
-    }
+.message {
+    display: flex;
+}
 
-    .dashboard-link {
-        text-align: center;
-        margin-top: 20px;
-    }
+.message.sent {
+    justify-content: flex-end;
+}
 
-    .dashboard-link a {
-        text-decoration: none;
-        background-color: #007bff;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transition: background-color 0.3s ease;
-    }
+.message.received {
+    justify-content: flex-start;
+}
 
-    .dashboard-link a:hover {
-        background-color: #0056b3;
-    }
+.bubble {
+    max-width: 75%;
+    padding: 12px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #dcf8c6;
+    color: #000;
+    word-wrap: break-word;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.message.sent .bubble {
+    background-color: #25D366;
+    color: #fff;
+    text-align: right;
+}
+
+.dashboard-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dashboard-link a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dashboard-link a:hover {
+    background-color: #0056b3;
+}
+
+/* Scrollbar style (optional for better look) */
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
 </style>

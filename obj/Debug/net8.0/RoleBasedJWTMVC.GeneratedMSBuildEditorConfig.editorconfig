@@ -84,8 +84,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEVtcGxveWVlRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Employee/Accept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWNjZXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Employee/EmployeeLeaveList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRW1wbG95ZWVMZWF2ZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Employee/Pending.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUGVuZGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Employee/Reject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcUmVqZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/ErrorViewModel.cshtml]
@@ -100,8 +112,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Leave/AdminLeaveList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVcQWRtaW5MZWF2ZUxpc3QuY3NodG1s
+[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Leave/AdminLeaveRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVcQWRtaW5MZWF2ZVJlcXVlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Leave/EmployeeLeaveStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVhdmVcRW1wbG95ZWVMZWF2ZVN0YXR1cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/xampp/htdocs/registerLogin/RoleBasedJWTMVC/Views/Profile/Details.cshtml]

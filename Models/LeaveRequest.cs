@@ -3,6 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RoleBasedJWTMVC.Models
 {
+
+    public enum LeaveStatus
+    {
+        Pending = 0,
+        Approved = 1,
+        Rejected = 2,
+        Accepted = 3
+
+    }
     public class LeaveRequest
     {
         public int Id { get; set; }
@@ -24,7 +33,7 @@ namespace RoleBasedJWTMVC.Models
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
-        public string Status { get; set; } = "Pending";
+        public LeaveStatus Status { get; set; } = LeaveStatus.Pending;
 
         public DateTime RequestDate { get; set; } = DateTime.Now;
     }

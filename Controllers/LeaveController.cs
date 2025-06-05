@@ -1,17 +1,20 @@
-using Microsoft.AspNetCore.Mvc;
-using RoleBasedJWTMVC.Models;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RoleBasedJWTMVC.Data;
+using RoleBasedJWTMVC.Models;
 using System.Net.Mail;
 using System.Net;
-using RoleBasedJWTMVC.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
 using Microsoft.Extensions.Configuration;
-using System.IO;
+using System.Security.Claims;
+
 
 namespace RoleBasedJWTMVC.Controllers
 {
+    [Authorize]
     public class LeaveController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,68 +26,100 @@ namespace RoleBasedJWTMVC.Controllers
             _configuration = configuration;
         }
 
-        // Employee - Request Leave (GET)
+        // Employee - Submit Leave Request (GET)
         [HttpGet]
         public IActionResult RequestLeave() => View("/Views/DashboardData/RequestLeave.cshtml");
 
-        // Employee - Request Leave (POST)
+        // Employee - Submit Leave Request (POST)
         [HttpPost]
-        public async Task<IActionResult> RequestLeave(LeaveRequest model)
+        public async Task<IActionResult>  RequestLeave(LeaveRequest model)
         {
-            if (ModelState.IsValid)
-            {
-                model.Status = "Pending";
-                model.RequestDate = DateTime.Now;
+            if (!ModelState.IsValid)
+                return View(model);
 
-                _context.LeaveRequests.Add(model);
-                await _context.SaveChangesAsync();
+            model.Status = LeaveStatus.Pending;
+            model.RequestDate = DateTime.Now;
 
-                SendEmailToAdmin(model);
-                return RedirectToAction("LeaveSuccess");
-            }
+            _context.LeaveRequests.Add(model);
+            await _context.SaveChangesAsync();
 
-            return View(model);
+            SendEmailToAdmin(model);
+
+            TempData["SuccessMessage"] = "Leave request submitted successfully!";
+            return RedirectToAction("LeaveSuccess");
         }
 
         public IActionResult LeaveSuccess() => View("/Views/DashboardData/LeaveSuccess.cshtml");
 
-        // Admin - View All Leave Requests
-        public async Task<IActionResult> AdminDashboard()
-        {
-            var leaves = await _context.LeaveRequests
-                .OrderByDescending(l => l.RequestDate)
-                .ToListAsync();
+        // Employee - View Their Leave Requests
+       [HttpGet]
+    public async Task<IActionResult> EmployeeLeaveStatus()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
 
-            return View(leaves);
+        if (string.IsNullOrEmpty(email))
+        {
+            return Unauthorized("Email not found in user claims.");
         }
 
-        // Admin - Approve Leave
-      [HttpPost]
-public async Task<IActionResult> Approve(int id)
-{
-    var leave = await _context.LeaveRequests.FindAsync(id);
-    if (leave != null)
-    {
-        leave.Status = "Approved";
-        await _context.SaveChangesAsync();
-        SendEmailToEmployee(leave);
-    }
-    return RedirectToAction("AdminDashboard");
-}
+        var leaves = await _context.LeaveRequests
+            .Where(l => l.EmployeeEmail == email)
+            .OrderByDescending(l => l.RequestDate)
+            .ToListAsync();
 
-[HttpPost]
-public async Task<IActionResult> Reject(int id)
-{
-    var leave = await _context.LeaveRequests.FindAsync(id);
-    if (leave != null)
-    {
-        leave.Status = "Rejected";
-        await _context.SaveChangesAsync();
-        SendEmailToEmployee(leave);
+        return View("/Views/Leave/EmployeeLeaveStatus.cshtml", leaves);
     }
-    return RedirectToAction("AdminDashboard");
-}
 
+
+        // Admin - View All Leave Requests
+        // [Authorize(Roles = "Admin")]
+        // [HttpGet]
+        // public async Task<IActionResult> AdminLeaveRequests()
+        // {
+        //     var leaves = await _context.LeaveRequests
+        //         .OrderByDescending(l => l.RequestDate)
+        //         .ToListAsync();
+
+        //     return View("/Views/Leave/AdminLeaveRequest.cshtml", leaves);
+        // }
+
+        // // Admin - Approve Leave Request
+        // [Authorize(Roles = "Admin")]
+        // [HttpPost]
+        // public async Task<IActionResult> ApproveLeave(int id)
+        // {
+        //     var leave = await _context.LeaveRequests.FindAsync(id);
+        //     if (leave == null)
+        //         return NotFound();
+
+        //     leave.Status = LeaveStatus.Accepted;
+        //     await _context.SaveChangesAsync();
+
+        //     SendEmailToEmployee(leave);
+
+        //     TempData["SuccessMessage"] = $"Leave request for {leave.EmployeeName} approved.";
+        //     return RedirectToAction("AdminLeaveRequests", "Leave");
+
+        // }
+
+        // // Admin - Reject Leave Request
+        // [Authorize(Roles = "Admin")]
+        // [HttpPost]
+        // public async Task<IActionResult> RejectLeave(int id)
+        // {
+        //     var leave = await _context.LeaveRequests.FindAsync(id);
+        //     if (leave == null)
+        //         return NotFound();
+
+        //     leave.Status = LeaveStatus.Rejected;
+        //     await _context.SaveChangesAsync();
+
+        //     SendEmailToEmployee(leave);
+
+        //     TempData["SuccessMessage"] = $"Leave request for {leave.EmployeeName} rejected.";
+        //     return RedirectToAction("AdminLeaveRequests", "Leave");
+
+        // }
 
         // Email Helpers
         private void SendEmailToAdmin(LeaveRequest request)
@@ -93,10 +128,7 @@ public async Task<IActionResult> Reject(int id)
             var fromEmail = _configuration["EmailSettings:FromEmail"];
 
             if (string.IsNullOrWhiteSpace(adminEmail) || string.IsNullOrWhiteSpace(fromEmail))
-            {
-                // Optional: Log or throw an exception that emails are not configured properly
                 return;
-            }
 
             var message = new MailMessage(fromEmail, adminEmail)
             {
@@ -104,7 +136,7 @@ public async Task<IActionResult> Reject(int id)
                 Body = $"Leave request from {request.EmployeeName}\n" +
                        $"Email: {request.EmployeeEmail}\n" +
                        $"Reason: {request.Reason}\n" +
-                       $"From: {request.StartDate.ToShortDateString()} To: {request.EndDate.ToShortDateString()}"
+                       $"From: {request.StartDate:d} To: {request.EndDate:d}"
             };
 
             SendMail(message);
@@ -115,15 +147,12 @@ public async Task<IActionResult> Reject(int id)
             var fromEmail = _configuration["EmailSettings:FromEmail"];
 
             if (string.IsNullOrWhiteSpace(request.EmployeeEmail) || string.IsNullOrWhiteSpace(fromEmail))
-            {
-                // Optional: Log or throw an exception that emails are not configured properly
                 return;
-            }
 
             var message = new MailMessage(fromEmail, request.EmployeeEmail)
             {
                 Subject = $"Leave Request {request.Status}",
-                Body = $"Hello {request.EmployeeName}, your leave from {request.StartDate.ToShortDateString()} to {request.EndDate.ToShortDateString()} has been {request.Status}."
+                Body = $"Hello {request.EmployeeName}, your leave from {request.StartDate:d} to {request.EndDate:d} has been {request.Status}."
             };
 
             SendMail(message);
@@ -132,7 +161,7 @@ public async Task<IActionResult> Reject(int id)
         private void SendMail(MailMessage message)
         {
             var host = _configuration["EmailSettings:SmtpHost"];
-            var port = int.Parse(_configuration["EmailSettings:Port"]);
+            var port = int.Parse(_configuration["EmailSettings:Port"] ?? "587");
             var fromEmail = _configuration["EmailSettings:FromEmail"];
             var password = _configuration["EmailSettings:Password"];
 
@@ -146,23 +175,7 @@ public async Task<IActionResult> Reject(int id)
 
             smtp.Send(message);
         }
-
-        // Employee - View Leave Status
-[HttpGet]
-public async Task<IActionResult> EmployeeLeaves(string email)
-{
-    if (string.IsNullOrEmpty(email))
-    {
-        return BadRequest("Email is required");
-    }
-
-    var leaves = await _context.LeaveRequests
-        .Where(l => l.EmployeeEmail == email)
-        .OrderByDescending(l => l.RequestDate)
-        .ToListAsync();
-
-    return View("/Views/DashboardData/EmployeeLeaves.cshtml", leaves);
-}
-
+        
+        
     }
 }
