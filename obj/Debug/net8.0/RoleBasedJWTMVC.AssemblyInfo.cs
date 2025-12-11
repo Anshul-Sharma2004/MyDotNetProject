@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoleBasedJWTMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28c12bb287f94d495549d230ba1c6a58a23b8cc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4dcc767cfc27d85bbe6ec7eba5a4de6fd9680e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoleBasedJWTMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoleBasedJWTMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

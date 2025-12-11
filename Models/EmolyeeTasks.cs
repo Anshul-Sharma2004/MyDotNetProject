@@ -1,4 +1,4 @@
-using RoleBasedJWTMVC.Models; // or wherever Employee class is located
+using RoleBasedJWTMVC.Models; 
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,6 +24,8 @@ namespace RoleBasedJWTMVC.Models
 
         [Required]
         public DateTime AssignedDate { get; set; }
+
+        public DateTime? CompletedDate { get; set; } 
 
         public DateTime? DueDate { get; set; }
 
